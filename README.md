@@ -1,7 +1,7 @@
 # Web-services-final-project-server
 
 ## installtion npm
-    - npm init
+    -npm init
     -npm install nodemon --save
     -npm install mongoose --save
     -npm install express --save
