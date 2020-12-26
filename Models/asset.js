@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 const assetSchema = new Schema({
     id: { type: Number, required: true },
     City: {type: String, required: true},
-    Street: {type: String, required: true},
+    Street: {type: String, required: true}, //change to neighbrhood
     Zip: { type: String, required: true},
     Country: { type: String, required: true},
     Rooms: { type: Number, required: true},
