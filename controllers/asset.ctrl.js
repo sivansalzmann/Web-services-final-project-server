@@ -35,6 +35,12 @@ exports.assetDBController = {
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
+        
+        else if (req.query.Neighborhood) {
+            Asset.find({ Neighborhood: `${req.query.Neighborhood}` })
+                .then(docs => { res.json(docs) })
+                .catch(err => console.log(`Error getting the data from DB: ${err}`));
+        }
 
         else if (req.query.Country) {
             Asset.find({ Country: `${req.query.Country}` })
@@ -96,8 +102,8 @@ exports.assetDBController = {
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
 
-        else if (req.query.Discription) {
-            Asset.find({ Discription: `${req.query.Discription}` })
+        else if (req.query.Description) {
+            Asset.find({ Description: `${req.query.Description}` })
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
@@ -122,6 +128,7 @@ exports.assetDBController = {
             "id": assetID,
             "City": req.query.City,
             "Street": req.query.Street,
+            "Neighborhood": req.query.Neighborhood,
             "Zip": req.query.Zip,
             "Country": req.query.Country,
             "Rooms": req.query.Rooms,
@@ -133,7 +140,7 @@ exports.assetDBController = {
             "Condition": req.query.Condition,
             "Price": req.query.Price,
             "Avilability": req.query.Avilability,
-            "Discription":req.queryDiscription
+            "Description":req.query.Description
         });
 
         newAsset.save()

@@ -4,6 +4,7 @@ const assetSchema = new Schema({
     id: { type: Number, required: true },
     City: {type: String, required: true},
     Street: {type: String, required: true},
+    Neighborhood:  { type: String, required: true},
     Zip: { type: String, required: true},
     Country: { type: String, required: true},
     Rooms: { type: Number, required: true},
@@ -15,7 +16,7 @@ const assetSchema = new Schema({
     Condition: { type: Number, required: true},
     Price: { type: String, required: true },
     Avilability: { type: Date, required: true},
-    Discription: { type: String, required: true },
+    Description: { type: String, required: true },
 }, { collection: 'assets'});
 
 const Asset = model('Asset', assetSchema);
