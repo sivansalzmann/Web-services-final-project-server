@@ -5,6 +5,7 @@ const ownerRouter = new Router();
 
 ownerRouter.get('/', ownerDBController.getOwners);
 ownerRouter.get('/:id', ownerDBController.getowner);
+ownerRouter.get('/:id', ownerDBController.getownerAssets);
 ownerRouter.post('/', ownerDBController.addOwner);
 ownerRouter.put('/:id', ownerDBController.updateOwner);
 ownerRouter.delete('/:id', ownerDBController.deleteOwner);

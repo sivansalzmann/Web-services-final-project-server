@@ -39,8 +39,8 @@ exports.ownerDBController = {
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
 
-        else if (req.query.Properties) {
-            Owner.find({ Properties: `${req.query.Properties}` })
+        else if (req.query.Assets) {
+            Owner.find({ Assets: `${req.query.Assets}` })
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
@@ -49,11 +49,18 @@ exports.ownerDBController = {
             Owner.find({})
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
-    }
+        }
     },
 
     getowner(req, res) {
         Owner.findOne({ id: parseInt(req.params.id) })
+            .then(docs => { res.json(docs) })
+            .catch(err => console.log(`Error getting the data from DB: ${err}`));
+
+    },
+
+    getownerAssets(req, res) {
+        Owner.findOne({ Assets: parseInt(req.params.Assets) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
@@ -68,7 +75,7 @@ exports.ownerDBController = {
             "gender": req.query.gender,
             "Phone": req.query.Phone,
             "Email": req.query.Email,
-            "Properties": req.query.Properties
+            "Assets": req.query.Assets
         });
         newOwner.save()
             .then(docs => { res.json(docs) })

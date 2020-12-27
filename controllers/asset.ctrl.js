@@ -5,17 +5,6 @@ const Asset = require('../Models/asset');
 let assetID = 250;
 let data;
 exports.assetDBController = {
-    // getLocation(req, res) {
-    //     if(req.query && req.query.City && req.query.State && req.query.Street ) {
-    //         //Google maps
-    //         axios.get(`https://maps.googleapis.com/maps/api/place/details/assets?${req.query.State}`)
-    //         //axios.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&key=AIzaSyCBKnpu56Zcj8oMp2iWIrv8ED9VG9Isgrg`)
-    //             .then((user) => res.json(user.data))
-    //             .catch((err) => res.json(`Errpr: ${err}`));
-    //     } else {
-    //         //else get all
-    //     }
-    // },
     getAssets(req, res) {
         if (req.query.City) {
             Asset.find({ City: `${req.query.City}` })
@@ -161,4 +150,5 @@ exports.assetDBController = {
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
+
 };

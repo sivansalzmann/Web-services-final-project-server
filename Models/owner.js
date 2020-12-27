@@ -7,7 +7,7 @@ const ownerSchema = new Schema({
     gender: { type: String, required: true},
     Phone: {type: String, require: true},
     Email: { type: String, required: true},
-    Properties: { type: Number, required: true},
+    Assets: { type: String, required: false},
 }, { collection: 'owners'});
 
 
