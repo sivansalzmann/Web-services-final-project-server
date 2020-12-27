@@ -97,6 +97,12 @@ exports.assetDBController = {
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
 
+        else if (req.query.AppartmentWant) {
+            Asset.find({ AppartmentWant: `${req.query.AppartmentWant}` })
+                .then(docs => { res.json(docs) })
+                .catch(err => console.log(`Error getting the data from DB: ${err}`));
+        }
+
         else {
             Asset.find({})
                 .then(docs => { res.json(docs) })

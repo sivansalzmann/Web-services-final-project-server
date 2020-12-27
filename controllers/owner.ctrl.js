@@ -44,6 +44,7 @@ exports.ownerDBController = {
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
+        
   
         else {
             Owner.find({})

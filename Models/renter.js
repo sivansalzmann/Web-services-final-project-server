@@ -9,6 +9,8 @@ const renterSchema = new Schema({
     Email: { type: String, required: true},
     JobTitle: {type: String, required: true},
     Budget: {type: String, required: true},
+    Apparts: {type: String, required: false},
+    
 }, { collection: 'renters'});
 
 
