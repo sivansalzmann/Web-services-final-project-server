@@ -14,7 +14,7 @@ const assetSchema = new Schema({
     Elevator: { type: Boolean, required: false},
     PetsAllowed: { type: Boolean, required: false},
     Condition: { type: String, required: false},
-    Price: { type: String, required: false },
+    Price: { type: Number, required: false },
     Avilability: { type: String, required: false},
     Description: { type: String, required: false },
 }, { collection: 'assets'});
