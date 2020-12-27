@@ -35,15 +35,15 @@ exports.assetDBController = {
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
-        
-        else if (req.query.Neighborhood) {
-            Asset.find({ Neighborhood: `${req.query.Neighborhood}` })
+
+        else if (req.query.Country) {
+            Asset.find({ Country: `${req.query.Country}` })
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
 
-        else if (req.query.Country) {
-            Asset.find({ Country: `${req.query.Country}` })
+        else if (req.query.Neighborhood) {
+            Asset.find({ Neighborhood: `${req.query.Neighborhood}` })
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
@@ -107,12 +107,12 @@ exports.assetDBController = {
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
-        
+
         else {
             Asset.find({})
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
-    }
+        }
     },
 
     getAsset(req, res) {
@@ -126,21 +126,21 @@ exports.assetDBController = {
         ++assetID;
         const newAsset = new Asset({
             "id": assetID,
-            "City": req.query.City,
-            "Street": req.query.Street,
-            "Neighborhood": req.query.Neighborhood,
-            "Zip": req.query.Zip,
-            "Country": req.query.Country,
-            "Rooms": req.query.Rooms,
-            "SquareFeet": req.query.SquareFeet,
-            "Floors": req.query.Floors,
-            "Parking": req.query.Parking,
-            "Elevator": req.query.Elevator,
-            "PetsAllowed": req.query.PetsAllowed,
-            "Condition": req.query.Condition,
-            "Price": req.query.Price,
-            "Avilability": req.query.Avilability,
-            "Description":req.query.Description
+            "City": req.body.City,
+            "Street": req.body.Street,
+            "Zip": req.body.Zip,
+            "Country": req.body.Country,
+            "Neighborhood": req.body.Neighborhood,
+            "Rooms": req.body.Rooms,
+            "SquareFeet": req.body.SquareFeet,
+            "Floors": req.body.Floors,
+            "Parking": req.body.Parking,
+            "Elevator": req.body.Elevator,
+            "PetsAllowed": req.body.PetsAllowed,
+            "Condition": req.body.Condition,
+            "Price": req.body.Price,
+            "Avilability": req.body.Avilability,
+            "Discription":req.body.Discription
         });
 
         newAsset.save()
@@ -162,4 +162,3 @@ exports.assetDBController = {
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
 };
-
