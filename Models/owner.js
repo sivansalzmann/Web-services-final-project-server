@@ -1,13 +1,19 @@
 const { Schema, model } = require('mongoose');
+const assetSchema = require('./asset');
+const personalDeatilsScema = require('./personalDetails');
+
+// const personalDeatils = new Schema({
+//     first_name: {type: String},
+//     last_name: {type: String},
+//     gender: { type: String},
+//     Phone: {type: String},
+//     Email: { type: String},
+// })
 
 const ownerSchema = new Schema({
-    id: { type: Number, required: true },
-    first_name: {type: String, required: true},
-    last_name: {type: String, required: true},
-    gender: { type: String, required: true},
-    Phone: {type: String, require: true},
-    Email: { type: String, required: true},
-    Assets: { type: String, required: false},
+    id: { type: Number},
+    personalDeatils: {type:personalDeatilsScema},
+    Assets: { type: [assetSchema]},
 }, { collection: 'owners'});
 
 

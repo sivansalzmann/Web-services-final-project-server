@@ -3,7 +3,6 @@ const{ assetDBController} = require('../controllers/asset.ctrl');
 
 const assetRouter = new Router();  
 
-//assetRouter.get('/',assetDBController.getLocation);
 assetRouter.get('/', assetDBController.getAssets);
 assetRouter.get('/:id', assetDBController.getAsset);
 assetRouter.post('/', assetDBController.addAsset);

@@ -1,42 +1,17 @@
-const { query } = require('express');
-const Asset = require('../Models/asset');
-const mongoose = require('mongoose');
+// const { query } = require('express');
+const { Asset } = require('../Models/asset');
+const Owner = require('../Models/owner');
+const Renter = require('../Models/renter');
+const personalDeatils = require('../Models/personalDetails');
 
-//const axios = require('axios');
-
-let assetID = 250;
-let data;
 exports.assetDBController = {
+
     getAssets(req, res) {
-        if (req.query.City) {
-            Asset.find({ City: `${req.query.City}` })
+        if (req.query.Adress) {
+            Asset.find({ CAdressity: `${req.query.Adress}` })
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
-        }
-
-        else if (req.query.Street) {
-            Asset.find({ Street: `${req.query.Street}` })
-                .then(docs => { res.json(docs) })
-                .catch(err => console.log(`Error getting the data from DB: ${err}`));
-        }
-
-        else if (req.query.Zip) {
-            Asset.find({ Zip: `${req.query.Zip}` })
-                .then(docs => { res.json(docs) })
-                .catch(err => console.log(`Error getting the data from DB: ${err}`));
-        }
-
-        else if (req.query.Country) {
-            Asset.find({ Country: `${req.query.Country}` })
-                .then(docs => { res.json(docs) })
-                .catch(err => console.log(`Error getting the data from DB: ${err}`));
-        }
-
-        else if (req.query.Neighborhood) {
-            Asset.find({ Neighborhood: `${req.query.Neighborhood}` })
-                .then(docs => { res.json(docs) })
-                .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
 
         else if (req.query.Rooms) {
@@ -106,10 +81,21 @@ exports.assetDBController = {
         }
 
         else {
-            Asset.find({})
-                .then(docs => { res.json(docs) })
-                .catch(err => console.log(`Error getting the data from DB: ${err}`));
+        Asset.find({})
+            .then(docs => { res.json(docs) })
+            .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
+        // getAssets(req, res) {
+        //     let filter = {}
+        //     if('id' in req.query)
+        //         filter.id = req.query.id;
+        //     Asset.find(filter)
+        //         .then(docs => { res.json(docs) })
+        //         .catch(err => {
+        //             res.status(500).json(`Error getting assets`);
+        //             console.log(`Error getting assets ${err}`)
+        //         })
+        // },
     },
 
     getAsset(req, res) {
@@ -119,16 +105,19 @@ exports.assetDBController = {
 
     },
 
-    addAsset(req, res) {
-        ++assetID;
+    async addAsset(req, res) {
+        //++assetID;
+        const temp = await Asset.findOne({}).sort({_id:-1}).limit(1);
+        let id = temp.id;
         const newAsset = new Asset({
-            "id": assetID,
-            //"_id": mongoose.Types.ObjectId(),
-            "City": req.body.City,
-            "Street": req.body.Street,
-            "Zip": req.body.Zip,
-            "Country": req.body.Country,
-            "Neighborhood": req.body.Neighborhood,
+            "id": id+1,
+            "Adress" : {
+                "City": req.body.City,
+                "Street": req.body.Street,
+                "Zip": req.body.Zip,
+                "Country": req.body.Country,
+                "Neighborhood": req.body.Neighborhood
+            },
             "Rooms": req.body.Rooms,
             "SquareFeet": req.body.SquareFeet,
             "Floors": req.body.Floors,
