@@ -71,12 +71,12 @@ exports.ownerDBController = {
         ++ownerID;
         const newOwner = new Owner({
             "id": ownerID,
-            "first_name": req.query.first_name,
-            "last_name": req.query.last_name,
-            "gender": req.query.gender,
-            "Phone": req.query.Phone,
-            "Email": req.query.Email,
-            "Assets": req.query.Assets
+            "first_name": req.body.first_name,
+            "last_name": req.body.last_name,
+            "gender": req.body.gender,
+            "Phone": req.body.Phone,
+            "Email": req.body.Email,
+            "Assets": req.body.Assets
         });
         newOwner.save()
             .then(docs => { res.json(docs) })

@@ -1,5 +1,7 @@
 const { query } = require('express');
 const Asset = require('../Models/asset');
+const mongoose = require('mongoose');
+
 //const axios = require('axios');
 
 let assetID = 250;
@@ -121,6 +123,7 @@ exports.assetDBController = {
         ++assetID;
         const newAsset = new Asset({
             "id": assetID,
+            //"_id": mongoose.Types.ObjectId(),
             "City": req.body.City,
             "Street": req.body.Street,
             "Zip": req.body.Zip,
@@ -135,7 +138,8 @@ exports.assetDBController = {
             "Condition": req.body.Condition,
             "Price": req.body.Price,
             "Avilability": req.body.Avilability,
-            "Discription":req.body.Discription
+            "Discription":req.body.Discription,
+            "AppartmentWant":req.body.AppartmentWant
         });
 
         newAsset.save()
