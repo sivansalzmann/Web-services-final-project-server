@@ -1,16 +1,26 @@
 const { Schema, model } = require('mongoose');
-const assetSchema = require('./asset');
-const personalDetailsSchema = require('./personalDetails');
+//const assetSchema = require('./asset');
+//const personalDetailsSchema = require('./personalDetails');
+
+// const personalDetailsSchema = new Schema({
+//     first_name: {type: String},
+//     last_name: {type: String},
+//     gender: { type: String},
+//     Phone: {type: String},
+//     Email: { type: String},
+// });
 
 const renterSchema = new Schema({
     id: { type: Number },
-    personalDeatils: {type:personalDetailsSchema},
+    first_name: {type: String},
+    last_name: {type: String},
+    gender: { type: String},
+    Phone: {type: String},
+    Email: { type: String},
     JobTitle: {type: String },
     Budget: {type: String },
-    Assets: { type:[assetSchema]},  
 }, { collection: 'renters'});
 
 
 const Renter = model('Renter', renterSchema);
-
 module.exports = Renter;

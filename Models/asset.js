@@ -1,17 +1,12 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
-const adressSchema = new Schema ({
+const assetSchema = new Schema({
+    id: { type: Number },
     City: {type: String },
     Street: {type: String },
     Neighborhood:  { type: String },
     Zip: { type: String },
     Country: { type: String },
-});
-
-
-const assetSchema = new Schema({
-    id: { type: Number },
-    Adress : {type: adressSchema},
     Rooms: { type: Number },
     SquareFeet: { type: Number },
     Floors: { type: Number },
@@ -19,11 +14,14 @@ const assetSchema = new Schema({
     Elevator: { type: Boolean },
     PetsAllowed: { type: Boolean },
     Condition: { type: String },
-    Price: { type: Number },
+    Price: { type: String },
     Avilability: { type: String },
     Description: { type: String },
     Want : { type: Boolean },
+    owner_id : {type : String},
+    renter_id : {type : String},
 }, { collection: 'assets'});
 
+const Asset = model('Asset', assetSchema);
 
-module.exports = assetSchema;
+module.exports = Asset;

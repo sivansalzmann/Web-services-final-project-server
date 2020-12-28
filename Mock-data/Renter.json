@@ -1,67 +1,52 @@
 [
     {
         "id": 1,
-        "personalDeatils": {
-            "first_name": "Arlan",
-            "last_name": "Mahon",
-            "gender": "Male",
-            "Phone": "947-421-8794",
-            "Email": "amahon0@tamu.edu"
-        },
+        "first_name": "Arlan",
+        "last_name": "Mahon",
+        "gender": "Male",
+        "Phone": "947-421-8794",
+        "Email": "amahon0@tamu.edu",
         "JobTitle": "Marketing Manager",
-        "Budget": "$6116.26",
-        "Assets": null
+        "Budget": "$6116.26"
     },
     {
         "id": 2,
-        "personalDeatils": {
-            "first_name": "Berni",
-            "last_name": "Binney",
-            "gender": "Female",
-            "Phone": "951-190-8760",
-            "Email": "bbinney1@un.org"
-        },
+        "first_name": "Berni",
+        "last_name": "Binney",
+        "gender": "Female",
+        "Phone": "951-190-8760",
+        "Email": "bbinney1@un.org",
         "JobTitle": "Sales Representative",
-        "Budget": "$2346.32",
-        "Assets": null
+        "Budget": "$2346.32"
     },
     {
         "id": 3,
-        "personalDeatils":{
-            "first_name": "Huberto",
-            "last_name": "Matushevitz",
-            "gender": "Male",
-            "Phone": "565-746-6968",
-            "Email": "hmatushevitz2@xrea.com"
-        },
+        "first_name": "Huberto",
+        "last_name": "Matushevitz",
+        "gender": "Male",
+        "Phone": "565-746-6968",
+        "Email": "hmatushevitz2@xrea.com",
         "JobTitle": "VP Marketing",
-        "Budget": "$3781.21",
-        "Assets": null 
+        "Budget": "$3781.21"
     },
     {
         "id": 4,
-        "personalDeatils": {
-            "first_name": "Shelley",
-            "last_name": "Langdale",
-            "gender": "Female",
-            "Phone": "746-565-0263",
-            "Email": "slangdale3@youtube.com"
-        },
+        "first_name": "Shelley",
+        "last_name": "Langdale",
+        "gender": "Female",
+        "Phone": "746-565-0263",
+        "Email": "slangdale3@youtube.com",
         "JobTitle": "Mechanical Systems Engineer",
-        "Budget": "$3937.66",
-        "Assets": null
+        "Budget": "$3937.66"
     },
     {
         "id": 5,
-        "personalDeatils":{
-            "first_name": "Dari",
-            "last_name": "Hannaby",
-            "gender": "Female",
-            "Phone": "946-498-1469",
-            "Email": "dhannaby4@ask.com"
-        },
+        "first_name": "Dari",
+        "last_name": "Hannaby",
+        "gender": "Female",
+        "Phone": "946-498-1469",
+        "Email": "dhannaby4@ask.com",
         "JobTitle": "Research Assistant I",
-        "Budget": "$1125.69",
-        "Assets": null
+        "Budget": "$1125.69"
     }
 ]

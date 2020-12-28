@@ -1,17 +1,26 @@
 // const { query } = require('express');
-const { Asset } = require('../Models/asset');
-const Owner = require('../Models/owner');
-const Renter = require('../Models/renter');
-const personalDeatils = require('../Models/personalDetails');
+const Asset  = require('../Models/asset');
 
 exports.assetDBController = {
 
     getAssets(req, res) {
-        if (req.query.Adress) {
-            Asset.find({ CAdressity: `${req.query.Adress}` })
+        if (req.query.City) {
+            Asset.find({ City: `${req.query.City}` })
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
+        }
+
+        else if (req.query.Zip) {
+            Asset.find({ Zip: `${req.query.Zip}` })
+                .then(docs => { res.json(docs) })
+                .catch(err => console.log(`Error getting the data from DB: ${err}`));
+        }
+
+        else if (req.query.Country) {
+            Asset.find({ Country: `${req.query.Country}` })
+                .then(docs => { res.json(docs) })
+                .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
 
         else if (req.query.Rooms) {
@@ -22,6 +31,12 @@ exports.assetDBController = {
 
         else if (req.query.SquareFeet) {
             Asset.find({ SquareFeet: `${req.query.SquareFeet}` })
+                .then(docs => { res.json(docs) })
+                .catch(err => console.log(`Error getting the data from DB: ${err}`));
+        }
+
+        else if (req.query.Neighborhood) {
+            Asset.find({ Neighborhood: `${req.query.Neighborhood}` })
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
@@ -80,22 +95,23 @@ exports.assetDBController = {
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
 
-        else {
-        Asset.find({})
-            .then(docs => { res.json(docs) })
-            .catch(err => console.log(`Error getting the data from DB: ${err}`));
+        else if (req.query.owner_id) {
+            Asset.find({ owner_id: `${req.query.owner_id}` })
+                .then(docs => { res.json(docs) })
+                .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
-        // getAssets(req, res) {
-        //     let filter = {}
-        //     if('id' in req.query)
-        //         filter.id = req.query.id;
-        //     Asset.find(filter)
-        //         .then(docs => { res.json(docs) })
-        //         .catch(err => {
-        //             res.status(500).json(`Error getting assets`);
-        //             console.log(`Error getting assets ${err}`)
-        //         })
-        // },
+
+        else if (req.query.renter_id) {
+            Asset.find({ renter_id: `${req.query.renter_id}` })
+                .then(docs => { res.json(docs) })
+                .catch(err => console.log(`Error getting the data from DB: ${err}`));
+        }
+
+        else {
+            Asset.find({})
+                .then(docs => { res.json(docs) })
+                .catch(err => console.log(`Error getting the data from DB: ${err}`));
+        }
     },
 
     getAsset(req, res) {
@@ -106,18 +122,15 @@ exports.assetDBController = {
     },
 
     async addAsset(req, res) {
-        //++assetID;
         const temp = await Asset.findOne({}).sort({_id:-1}).limit(1);
         let id = temp.id;
         const newAsset = new Asset({
             "id": id+1,
-            "Adress" : {
-                "City": req.body.City,
-                "Street": req.body.Street,
-                "Zip": req.body.Zip,
-                "Country": req.body.Country,
-                "Neighborhood": req.body.Neighborhood
-            },
+            "City": req.body.City,
+            "Street": req.body.Street,
+            "Zip": req.body.Zip,
+            "Country": req.body.Country,
+            "Neighborhood": req.body.Neighborhood,
             "Rooms": req.body.Rooms,
             "SquareFeet": req.body.SquareFeet,
             "Floors": req.body.Floors,
@@ -127,8 +140,10 @@ exports.assetDBController = {
             "Condition": req.body.Condition,
             "Price": req.body.Price,
             "Avilability": req.body.Avilability,
-            "Discription":req.body.Discription,
-            "Want":req.body.AppartmentWant
+            "Description":req.body.Description,
+            "Want":false,
+            "owner_id": 0 ,
+            "renter_id": 0 
         });
 
         newAsset.save()

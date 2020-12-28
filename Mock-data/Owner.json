@@ -1,57 +1,42 @@
 [
     {
         "id": 1,
-        "personalDeatils":{
-            "first_name": "Darlene",
-            "last_name": "Matthaus",
-            "gender": "Female",
-            "Phone": "667-873-2068",
-            "Email": "dmatthaus0@dailymotion.com"
-        },
-        "Assets": null
+        "first_name": "Darlene",
+        "last_name": "Matthaus",
+        "gender": "Female",
+        "Phone": "667-873-2068",
+        "Email": "dmatthaus0@dailymotion.com"
     },
     {
         "id": 2,
-        "personalDeatils":{
-            "first_name": "Karissa",
-            "last_name": "Gawkes",
-            "gender": "Female",
-            "Phone": "197-494-8998",
-            "Email": "kgawkes1@angelfire.com"
-        },
-        "Assets": null
+        "first_name": "Karissa",
+        "last_name": "Gawkes",
+        "gender": "Female",
+        "Phone": "197-494-8998",
+        "Email": "kgawkes1@angelfire.com"
     },
     {
         "id": 3,
-        "personalDeatils":{
-            "first_name": "Sherilyn",
-            "last_name": "Boome",
-            "gender": "Female",
-            "Phone": "358-623-6691",
-            "Email": "sboome2@opensource.org"
-        },
-        "Assets": null
+        "first_name": "Sherilyn",
+        "last_name": "Boome",
+        "gender": "Female",
+        "Phone": "358-623-6691",
+        "Email": "sboome2@opensource.org"
     },
     {
         "id": 4,
-        "personalDeatils":{
-            "first_name": "Valeda",
-            "last_name": "Finessy",
-            "gender": "Female",
-            "Phone": "866-500-2836",
-            "Email": "vfinessy3@qq.com"
-        },
-        "Assets": null
+        "first_name": "Valeda",
+        "last_name": "Finessy",
+        "gender": "Female",
+        "Phone": "866-500-2836",
+        "Email": "vfinessy3@qq.com"
     },
     {
         "id": 5,
-        "personalDeatils":{
-            "first_name": "Curry",
-            "last_name": "Flowerdew",
-            "gender": "Male",
-            "Phone": "697-231-6248",
-            "Email": "cflowerdew4@dot.gov"
-        },
-        "Assets": null
+        "first_name": "Curry",
+        "last_name": "Flowerdew",
+        "gender": "Male",
+        "Phone": "697-231-6248",
+        "Email": "cflowerdew4@dot.gov"
     }
 ]
