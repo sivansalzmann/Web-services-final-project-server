@@ -50,8 +50,8 @@ exports.renterDBController = {
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
 
-        else if (req.query.Apparts) {
-            Renter.find({ Apparts: `${req.query.Apparts}` })
+        else if (req.query.Assets) {
+            Renter.find({ Assets: `${req.query.Assets}` })
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
@@ -82,7 +82,7 @@ exports.renterDBController = {
             "Email": req.query.Email,
             "JobTitle": req.query.JobTitle,
             "Budget": req.query.Budget,
-            "Apparts": req.query.Apparts
+            "Assets": req.query.Assets
         });
 
         newRenter.save()

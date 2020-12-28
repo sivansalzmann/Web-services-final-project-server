@@ -99,8 +99,8 @@ exports.assetDBController = {
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
 
-        else if (req.query.AppartmentWant) {
-            Asset.find({ AppartmentWant: `${req.query.AppartmentWant}` })
+        else if (req.query.Want) {
+            Asset.find({ Want: `${req.query.Want}` })
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
@@ -139,7 +139,7 @@ exports.assetDBController = {
             "Price": req.body.Price,
             "Avilability": req.body.Avilability,
             "Discription":req.body.Discription,
-            "AppartmentWant":req.body.AppartmentWant
+            "Want":req.body.AppartmentWant
         });
 
         newAsset.save()

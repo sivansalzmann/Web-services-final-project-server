@@ -17,7 +17,7 @@ const assetSchema = new Schema({
     Price: { type: Number, required: false },
     Avilability: { type: String, required: false},
     Description: { type: String, required: false },
-    AppartmentWant : { type: Boolean, required: false},
+    Want : { type: Boolean, required: false},
 }, { collection: 'assets'});
 
 const Asset = model('Asset', assetSchema);
