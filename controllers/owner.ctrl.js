@@ -1,6 +1,5 @@
 const { query } = require('express');
 const Owner = require('../Models/owner');
-const Asset = require('../Models/asset');
 
 
 exports.ownerDBController = {
@@ -76,7 +75,6 @@ exports.ownerDBController = {
             "Gender": req.body.Gender,
             "Phone": req.body.Phone,
             "Email": req.body.Email,
-            "Assets": []
         });
 
         newOwner.save()
@@ -109,21 +107,6 @@ exports.ownerDBController = {
         Owner.findOneAndDelete({ id: parseInt(req.params.id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
-    },
-
-    // updateAssetsByOwnerId(req, res) {
-    //     Owner.findById(2) 
-    //         .then((Asset) => {
-    //             const asset = Owner.Assets.id(2); // returns a matching subdocument
-    //             Owner.set(req.body); // updates the address while keeping its schema       
-    //             // address.zipCode = req.body.zipCode; // individual fields can be set directly
-            
-    //             return Owner.save(); // saves document with subdocuments and triggers validation
-    //         })
-    //         .then((Owner) => {
-    //             res.send({ Owner });
-    //         })
-    //         .catch(e => res.status(400).send(e));
-    // }
+    }
 };
 
