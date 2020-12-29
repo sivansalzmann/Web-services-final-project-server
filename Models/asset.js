@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const assetSchema = new Schema({
-    id: { type: Number },
+    Id: { type: Number },
     City: {type: String },
     Street: {type: String },
     Neighborhood:  { type: String },
@@ -18,8 +18,8 @@ const assetSchema = new Schema({
     Avilability: { type: String },
     Description: { type: String },
     Want : { type: Boolean },
-    owner_id : {type : String},
-    renter_id : {type : String},
+    OwnerId : {type : String},
+    RenterId : {type : String},
 }, { collection: 'assets'});
 
 const Asset = model('Asset', assetSchema);

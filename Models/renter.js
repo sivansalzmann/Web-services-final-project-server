@@ -11,10 +11,10 @@ const { Schema, model } = require('mongoose');
 // });
 
 const renterSchema = new Schema({
-    id: { type: Number },
-    first_name: {type: String},
-    last_name: {type: String},
-    gender: { type: String},
+    Id: { type: Number },
+    FirstName: {type: String},
+    LastName: {type: String},
+    Gender: { type: String},
     Phone: {type: String},
     Email: { type: String},
     JobTitle: {type: String },

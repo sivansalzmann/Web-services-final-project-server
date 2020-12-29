@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "Id": 1,
         "City": "Czarne",
         "Street": "80301 Merry Place",
         "Neighborhood": "Manufacturers",
@@ -17,11 +17,11 @@
         "Avilability": "05/12/2021",
         "Description": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
         "Want": false,
-        "owner_id" : 0,
-        "renter_id" : 0
+        "OwnerId" : 0,
+        "RenterId" : 0
     },
     {
-        "id": 2,
+        "Id": 2,
         "City": "Sakété",
         "Street": "10 Sycamore Terrace",
         "Neighborhood": "Vera",
@@ -38,11 +38,11 @@
         "Avilability": "23/12/2020",
         "Description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
         "Want": false,
-        "owner_id" : 0,
-        "renter_id" : 0
+        "OwnerId" : 0,
+        "RenterId" : 0
     },
     {
-        "id": 3,
+        "Id": 3,
         "City": "Villamontes",
         "Street": "338 Melvin Way",
         "Neighborhood": "Amoth",
@@ -59,11 +59,11 @@
         "Avilability": "02/12/2021",
         "Description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
         "Want": false,
-        "owner_id" : 0,
-        "renter_id" : 0
+        "OwnerId" : 0,
+        "RenterId" : 0
     },
     {
-        "id": 4,
+        "Id": 4,
         "City": "Samdo",
         "Street": "3 Jackson Place",
         "Neighborhood": "Burning Wood",
@@ -80,11 +80,11 @@
         "Avilability": "15/06/2021",
         "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
         "Want": false,
-        "owner_id" : 0,
-        "renter_id" : 0
+        "OwnerId" : 0,
+        "RenterId" : 0
     },
     {
-        "id": 5,
+        "Id": 5,
         "City": "Lamego",
         "Street": "101 Mesta Pass",
         "Neighborhood": "Esker",
@@ -101,7 +101,7 @@
         "Avilability": "16/08/2020",
         "Description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
         "Want": false,
-        "owner_id" : 0,
-        "renter_id" : 0
+        "OwnerId" : 0,
+        "RenterId" : 0
     } 
 ]

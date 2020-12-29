@@ -1,41 +1,41 @@
 [
     {
         "id": 1,
-        "first_name": "Darlene",
-        "last_name": "Matthaus",
-        "gender": "Female",
+        "FirstName": "Darlene",
+        "LastName": "Matthaus",
+        "Gender": "Female",
         "Phone": "667-873-2068",
         "Email": "dmatthaus0@dailymotion.com"
     },
     {
         "id": 2,
-        "first_name": "Karissa",
-        "last_name": "Gawkes",
-        "gender": "Female",
+        "FirstName": "Karissa",
+        "LastName": "Gawkes",
+        "Gender": "Female",
         "Phone": "197-494-8998",
         "Email": "kgawkes1@angelfire.com"
     },
     {
         "id": 3,
-        "first_name": "Sherilyn",
-        "last_name": "Boome",
-        "gender": "Female",
+        "FirstName": "Sherilyn",
+        "LastName": "Boome",
+        "Gender": "Female",
         "Phone": "358-623-6691",
         "Email": "sboome2@opensource.org"
     },
     {
         "id": 4,
-        "first_name": "Valeda",
-        "last_name": "Finessy",
-        "gender": "Female",
+        "FirstName": "Valeda",
+        "LastName": "Finessy",
+        "Gender": "Female",
         "Phone": "866-500-2836",
         "Email": "vfinessy3@qq.com"
     },
     {
         "id": 5,
-        "first_name": "Curry",
-        "last_name": "Flowerdew",
-        "gender": "Male",
+        "FirstName": "Curry",
+        "LastName": "Flowerdew",
+        "Gender": "Male",
         "Phone": "697-231-6248",
         "Email": "cflowerdew4@dot.gov"
     }

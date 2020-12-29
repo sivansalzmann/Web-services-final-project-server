@@ -5,20 +5,20 @@ const Owner = require('../Models/owner');
 exports.ownerDBController = {
 
     getOwners(req, res) {
-        if (req.query.first_name) {
-            Owner.find({ first_name: `${req.query.first_name}` })
+        if (req.query.FirstName) {
+            Owner.find({ FirstName: `${req.query.FirstName}` })
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
 
-        else if (req.query.last_name) {
-            Owner.find({ last_name: `${req.query.last_name}` })
+        else if (req.query.LastName) {
+            Owner.find({ LastName: `${req.query.LastName}` })
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
 
-        else if (req.query.gender) {
-            Owner.find({ gender: `${req.query.gender}` })
+        else if (req.query.Gender) {
+            Owner.find({ Gender: `${req.query.Gender}` })
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
@@ -44,7 +44,7 @@ exports.ownerDBController = {
     },
 
     getowner(req, res) {
-        Owner.findOne({ id: parseInt(req.params.id) })
+        Owner.findOne({ Id: parseInt(req.params.Id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
@@ -52,13 +52,13 @@ exports.ownerDBController = {
 
 
     async addOwner(req, res) {
-        const temp = await Owner.findOne({}).sort({ _id: -1 }).limit(1);
-        let id = temp.id;
+        const temp = await Owner.findOne({}).sort({ _Id: -1 }).limit(1);
+        let Id = temp.Id;
         const newOwner = new Owner({
-            "id": id + 1,
-            "first_name": req.body.first_name,
-            "last_name": req.body.last_name,
-            "gender": req.body.gender,
+            "Id": id + 1,
+            "FirstName": req.body.FirstName,
+            "LastName": req.body.LastName,
+            "Gender": req.body.Gender,
             "Phone": req.body.Phone,
             "Email": req.body.Email
         });
@@ -70,14 +70,14 @@ exports.ownerDBController = {
     },
 
     updateOwner(req, res) {
-        Owner.updateOne({ id: parseInt(req.params.id) }, req.body)
+        Owner.updateOne({ Id: parseInt(req.params.Id) }, req.body)
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
         
     },
     
     deleteOwner(req, res) {
-        Owner.findOneAndDelete({ id: parseInt(req.params.id) })
+        Owner.findOneAndDelete({ Id: parseInt(req.params.Id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
