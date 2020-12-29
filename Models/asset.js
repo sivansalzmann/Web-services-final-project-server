@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const { Schema, model } = require('mongoose');
 
 const assetSchema = new Schema({
@@ -18,8 +19,8 @@ const assetSchema = new Schema({
     Avilability: { type: String },
     Description: { type: String },
     Want : { type: Boolean },
-    owner_id : {type : String},
-    renter_id : {type : String},
+    owner : { type: mongoose.Schema.Types.ObjectId, ref: 'Owner'},
+    renter : { type: mongoose.Schema.Types.ObjectId, ref: 'Renter'},
 }, { collection: 'assets'});
 
 const Asset = model('Asset', assetSchema);
