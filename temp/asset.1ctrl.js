@@ -124,10 +124,10 @@ exports.assetDBController = {
     },
 
     async addAsset(req, res) {
-        const temp = await Asset.findOne({}).sort({_Id:-1}).limit(1);
-        let id = temp.Id;
+        const temp = await Asset.findOne({}).sort({_id:-1}).limit(1);
+        let id = temp.id;
         const newAsset = new Asset({
-            "Id": Id+1,
+            "id": id+1,
             "City": req.body.City,
             "Street": req.body.Street,
             "Zip": req.body.Zip,
@@ -156,13 +156,13 @@ exports.assetDBController = {
 
     updateAsset(req, res) {
 
-        Asset.updateOne({ Id: parseInt(req.params.Id) }, req.body)
+        Asset.updateOne({ id: parseInt(req.params.id) }, req.body)
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
 
     deleteAsset(req, res) {
-        Asset.findOneAndDelete({ Id: parseInt(req.params.Id) })
+        Asset.findOneAndDelete({ id: parseInt(req.params.id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
@@ -260,5 +260,5 @@ exports.assetDBController = {
 //     placeResult = autocomplete.getPlace();
 //     console.log(placeResult);//This will get only the address
 //     input.value = placeResult.name;
-    
 // }
+

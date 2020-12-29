@@ -62,7 +62,7 @@ exports.renterDBController = {
     },
 
     getRenter(req, res) {
-        Renter.findOne({ id: parseInt(req.params.id) })
+        Renter.findOne({ Id: parseInt(req.params.id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
@@ -81,6 +81,7 @@ exports.renterDBController = {
             "JobTitle": req.body.JobTitle,
             "Budget": req.body.Budget,
             "Asset": req.body.Asset
+
         });
 
         newRenter.save()
@@ -91,7 +92,7 @@ exports.renterDBController = {
 
     updateRenter(req, res) {
 
-        Renter.updateOne({ Id: parseInt(req.params.Id) }, req.body)
+        Renter.updateOne({ id: parseInt(req.params.id) }, req.body)
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },

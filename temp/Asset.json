@@ -1,6 +1,6 @@
 [
     {
-        "Id": 1,
+        "id": 1,
         "City": "Czarne",
         "Street": "80301 Merry Place",
         "Neighborhood": "Manufacturers",
@@ -21,7 +21,7 @@
         "RenterId" : 0
     },
     {
-        "Id": 2,
+        "id": 2,
         "City": "Sakété",
         "Street": "10 Sycamore Terrace",
         "Neighborhood": "Vera",
@@ -42,7 +42,7 @@
         "RenterId" : 0
     },
     {
-        "Id": 3,
+        "id": 3,
         "City": "Villamontes",
         "Street": "338 Melvin Way",
         "Neighborhood": "Amoth",
@@ -63,7 +63,7 @@
         "RenterId" : 0
     },
     {
-        "Id": 4,
+        "id": 4,
         "City": "Samdo",
         "Street": "3 Jackson Place",
         "Neighborhood": "Burning Wood",
@@ -84,7 +84,7 @@
         "RenterId" : 0
     },
     {
-        "Id": 5,
+        "id": 5,
         "City": "Lamego",
         "Street": "101 Mesta Pass",
         "Neighborhood": "Esker",
