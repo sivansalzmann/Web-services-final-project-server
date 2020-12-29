@@ -1,5 +1,7 @@
 // const { query } = require('express');
 const Asset  = require('../Models/asset');
+const Owner = require('../Models/owner');
+const Renter = require('../Models/renter');
 
 exports.assetDBController = {
 
@@ -164,7 +166,16 @@ exports.assetDBController = {
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
-
+    findAssetOwner(req,res) {
+        Owner.find{id: req.params.id}).populate({path: 'asset', model: 'Asset', select: 'owner'});
+            .then(docs => { res.json(docs) })
+            .catch(err => console.log(`Error getting the data from DB: ${err}`));  
+    },
+    findAssetRenter(req,res) {
+        Renter.find{id: req.params.id}).populate({path: 'asset', model: 'Asset', select: 'renter'});
+            .then(docs => { res.json(docs) })
+            .catch(err => console.log(`Error getting the data from DB: ${err}`));  
+    }
 };
 
 // ______________API_________________
