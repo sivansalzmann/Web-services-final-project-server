@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose');
+const { Schema,model } = require('mongoose');
 
 const assetSchema = new Schema({
     id: { type: Number },
@@ -18,6 +18,10 @@ const assetSchema = new Schema({
     Avilability: { type: String },
     Description: { type: String },
     Want : { type: Boolean },
+    OwnerId : { type: Number },
+    RenterId : { type: Number },
 }, { collection: 'assets'});
 
-module.exports = assetSchema;
+const Asset = model('Asset', assetSchema);
+
+module.exports = Asset;

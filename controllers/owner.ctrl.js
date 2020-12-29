@@ -1,6 +1,6 @@
 const { query } = require('express');
 const Owner = require('../Models/owner');
-const Assets = require('../Models/asset');
+const Asset = require('../Models/asset');
 
 
 exports.ownerDBController = {
@@ -43,7 +43,6 @@ exports.ownerDBController = {
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
 
-         
         else {
             Owner.find({})
                 .then(docs => { res.json(docs) })
@@ -53,6 +52,14 @@ exports.ownerDBController = {
 
     getowner(req, res) {
         Owner.findOne({ id: parseInt(req.params.id) })
+            .then(docs => { res.json(docs) })
+            .catch(err => console.log(`Error getting the data from DB: ${err}`));
+
+    },
+
+    getAssets(req, res) {
+        console.log("ok");
+        Owner.findOne({document: ['Assets']})
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
@@ -69,7 +76,7 @@ exports.ownerDBController = {
             "Gender": req.body.Gender,
             "Phone": req.body.Phone,
             "Email": req.body.Email,
-            "Assets":req.body.Asset
+            "Assets": []
         });
 
         newOwner.save()
@@ -91,5 +98,32 @@ exports.ownerDBController = {
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
 
+    addAssetByOwnerId(req, res) {
+        Owner.updateOne({ id: parseInt(req.params.id) }, req.body)
+            .then(docs => { res.json(docs) })
+            .catch(err => console.log(`Error getting the data from DB: ${err}`));
+        
+    },
+    
+    deleteOwner(req, res) {
+        Owner.findOneAndDelete({ id: parseInt(req.params.id) })
+            .then(docs => { res.json(docs) })
+            .catch(err => console.log(`Error getting the data from DB: ${err}`));
+    },
+
+    // updateAssetsByOwnerId(req, res) {
+    //     Owner.findById(2) 
+    //         .then((Asset) => {
+    //             const asset = Owner.Assets.id(2); // returns a matching subdocument
+    //             Owner.set(req.body); // updates the address while keeping its schema       
+    //             // address.zipCode = req.body.zipCode; // individual fields can be set directly
+            
+    //             return Owner.save(); // saves document with subdocuments and triggers validation
+    //         })
+    //         .then((Owner) => {
+    //             res.send({ Owner });
+    //         })
+    //         .catch(e => res.status(400).send(e));
+    // }
 };
 

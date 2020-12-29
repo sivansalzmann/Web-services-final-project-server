@@ -1,5 +1,5 @@
 const { query } = require('express');
-const Owner = require('./Models/owner');
+const Owner = require('../Models/owner');
 
 
 exports.ownerDBController = {

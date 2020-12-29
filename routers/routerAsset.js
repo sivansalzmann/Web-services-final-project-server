@@ -1,5 +1,5 @@
 const { Router } = require('express'); 
-const{ assetDBController} = require('./asset.ctrl');
+const{ assetDBController} = require('../controllers/asset.ctrl');
 
 const assetRouter = new Router();  
 

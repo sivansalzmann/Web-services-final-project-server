@@ -1,7 +1,5 @@
 // const { query } = require('express');
-const Asset  = require('./Models/asset');
-const Owner = require('./Models/owner');
-const Renter = require('./Models/renter');
+const Asset  = require('../Models/asset');
 
 exports.assetDBController = {
 

@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 
-// const {assetRouter} = require("./routers/routerAsset");
+const {assetRouter} = require("./routers/routerAsset");
 const {renterRouter} = require("./routers/routerRenter");
 const {ownerRouter} = require("./routers/routerOwner");
 
@@ -20,7 +20,7 @@ app.use((req,res,next) =>{
     
 });
 
-// app.use('/api/assets', assetRouter);
+app.use('/api/assets', assetRouter);
 app.use('/api/renters', renterRouter);
 app.use('/api/owners', ownerRouter);
 

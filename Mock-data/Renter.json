@@ -7,8 +7,7 @@
         "Phone": "947-421-8794",
         "Email": "amahon0@tamu.edu",
         "JobTitle": "Marketing Manager",
-        "Budget": "$6116.26",
-        "Asset":null
+        "Budget": "$6116.26"
     },
     {
         "id": 2,
@@ -18,8 +17,7 @@
         "Phone": "951-190-8760",
         "Email": "bbinney1@un.org",
         "JobTitle": "Sales Representative",
-        "Budget": "$2346.32",
-        "Asset":null
+        "Budget": "$2346.32"
     },
     {
         "id": 3,
@@ -29,25 +27,7 @@
         "Phone": "565-746-6968",
         "Email": "hmatushevitz2@xrea.com",
         "JobTitle": "VP Marketing",
-        "Budget": "$3781.21",
-        "Asset": {
-            "City": "Sakété",
-            "Street": "10 Sycamore Terrace",
-            "Neighborhood": "Vera",
-            "Zip": "54458-302",
-            "Country": "Benin",
-            "Rooms": 7,
-            "SquareFeet": 81,
-            "Floors": 4,
-            "Parking": false,
-            "Elevator": false,
-            "PetsAllowed": true,
-            "Condition": "Good",
-            "Price": 3184.96,
-            "Avilability": "23/12/2020",
-            "Description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
-            "Want": false
-        }
+        "Budget": "$3781.21"
     },
     {
         "id": 4,
@@ -57,25 +37,7 @@
         "Phone": "746-565-0263",
         "Email": "slangdale3@youtube.com",
         "JobTitle": "Mechanical Systems Engineer",
-        "Budget": "$3937.66",
-        "Asset": {
-            "City": "Czarne",
-            "Street": "80301 Merry Place",
-            "Neighborhood": "Manufacturers",
-            "Zip": "60681-6200",
-            "Country": "Poland",
-            "Rooms": 9,
-            "SquareFeet": 70,
-            "Floors": 5,
-            "Parking": true,
-            "Elevator": true,
-            "PetsAllowed": false,
-            "Condition": "Great",
-            "Price": 4259.1,
-            "Avilability": "05/12/2021",
-            "Description": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
-            "Want": false
-        }
+        "Budget": "$3937.66"
     },
     {
         "id": 5,
@@ -85,7 +47,6 @@
         "Phone": "946-498-1469",
         "Email": "dhannaby4@ask.com",
         "JobTitle": "Research Assistant I",
-        "Budget": "$1125.69",
-        "Asset":null
+        "Budget": "$1125.69"
     }
 ]
