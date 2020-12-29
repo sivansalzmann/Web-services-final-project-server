@@ -153,6 +153,7 @@ exports.assetDBController = {
     },
 
     updateAsset(req, res) {
+
         Asset.updateOne({ id: parseInt(req.params.id) }, req.body)
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
@@ -163,10 +164,8 @@ exports.assetDBController = {
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     }
-    
 };
 
-// ______________API_________________
   // This sample uses the Autocomplete widget to help the user select a
 // place, then it retrieves the address components associated with that
 // place, and then it populates the form fields with those details.
@@ -249,4 +248,4 @@ exports.assetDBController = {
 //     console.log(placeResult);//This will get only the address
 //     input.value = placeResult.name;
     
-// }
+
