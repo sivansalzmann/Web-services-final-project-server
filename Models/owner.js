@@ -11,7 +11,7 @@ const personalDetailsSchema = new Schema({
 });
 
 const ownerSchema = new Schema({
-    Id: { type: Number},
+    id: { type: Number},
     PersonalDeatils: {type:personalDetailsSchema},
 }, { collection: 'owners'});
 

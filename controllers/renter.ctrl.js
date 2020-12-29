@@ -56,17 +56,17 @@ exports.renterDBController = {
     },
 
     getRenter(req, res) {
-        Renter.findOne({ Id: parseInt(req.params.Id) })
+        Renter.findOne({ Id: parseInt(req.params.id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
     },
 
     async addRenter(req, res) {
-        const temp = await Renter.findOne({}).sort({ _Id: -1 }).limit(1);
-        let Id = temp.Id;
+        const temp = await Renter.findOne({}).sort({ _id: -1 }).limit(1);
+        let id = temp.Id;
         const newRenter = new Renter({
-            "Id": Id + 1,
+            "id": id + 1,
             "firstName": req.query.firstName,
             "lastName": req.query.lastName,
             "Gender": req.query.Gender,
@@ -84,13 +84,13 @@ exports.renterDBController = {
 
     updateRenter(req, res) {
 
-        Renter.updateOne({ Id: parseInt(req.params.Id) }, req.body)
+        Renter.updateOne({ id: parseInt(req.params.id) }, req.body)
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
 
     deleteRenter(req, res) {
-        Renter.findOneAndDelete({ Id: parseInt(req.params.Id) })
+        Renter.findOneAndDelete({ Id: parseInt(req.params.id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },

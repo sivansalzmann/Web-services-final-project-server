@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const assetSchema = new Schema({
-    Id: { type: Number },
+    id: { type: Number },
     City: {type: String },
     Street: {type: String },
     Neighborhood:  { type: String },

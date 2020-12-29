@@ -11,7 +11,7 @@ const { Schema, model } = require('mongoose');
 // });
 
 const renterSchema = new Schema({
-    Id: { type: Number },
+    id: { type: Number },
     FirstName: {type: String},
     LastName: {type: String},
     Gender: { type: String},

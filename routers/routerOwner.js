@@ -4,10 +4,10 @@ const{ ownerDBController} = require('../controllers/owner.ctrl');
 const ownerRouter = new Router();  
 
 ownerRouter.get('/', ownerDBController.getOwners);
-ownerRouter.get('/:Id', ownerDBController.getowner);
+ownerRouter.get('/:id', ownerDBController.getowner);
 ownerRouter.post('/', ownerDBController.addOwner);
-ownerRouter.put('/:Id', ownerDBController.updateOwner);
-ownerRouter.delete('/:Id', ownerDBController.deleteOwner);
+ownerRouter.put('/:id', ownerDBController.updateOwner);
+ownerRouter.delete('/:id', ownerDBController.deleteOwner);
 
 
 module.exports = {ownerRouter};

@@ -44,7 +44,7 @@ exports.ownerDBController = {
     },
 
     getowner(req, res) {
-        Owner.findOne({ Id: parseInt(req.params.Id) })
+        Owner.findOne({ id: parseInt(req.params.id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
@@ -52,8 +52,8 @@ exports.ownerDBController = {
 
 
     async addOwner(req, res) {
-        const temp = await Owner.findOne({}).sort({ _Id: -1 }).limit(1);
-        let Id = temp.Id;
+        const temp = await Owner.findOne({}).sort({ _id: -1 }).limit(1);
+        let id = temp.id;
         const newOwner = new Owner({
             "Id": id + 1,
             "FirstName": req.body.FirstName,
@@ -70,14 +70,14 @@ exports.ownerDBController = {
     },
 
     updateOwner(req, res) {
-        Owner.updateOne({ Id: parseInt(req.params.Id) }, req.body)
+        Owner.updateOne({ id: parseInt(req.params.id) }, req.body)
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
         
     },
     
     deleteOwner(req, res) {
-        Owner.findOneAndDelete({ Id: parseInt(req.params.Id) })
+        Owner.findOneAndDelete({ id: parseInt(req.params.id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
