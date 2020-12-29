@@ -1,11 +1,12 @@
 const { query } = require('express');
 const Renter = require('../Models/renter');
+const Asset = require('../Models/asset');
 
 exports.renterDBController = {
 
     getRenters(req, res) {
-        if (req.query.firstName) {
-            Renter.find({ firstName: `${req.query.firstName}` })
+        if (req.query.FirstName) {
+            Renter.find({ FirstName: `${req.query.FirstName}` })
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
@@ -34,7 +35,6 @@ exports.renterDBController = {
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
 
-
         else if (req.query.JobTitle) {
             Renter.find({ JobTitle: `${req.query.JobTitle}` })
                 .then(docs => { res.json(docs) })
@@ -43,6 +43,12 @@ exports.renterDBController = {
 
         else if (req.query.Budget) {
             Renter.find({ Budget: `${req.query.Budget}` })
+                .then(docs => { res.json(docs) })
+                .catch(err => console.log(`Error getting the data from DB: ${err}`));
+        }
+
+        else if (req.query.Asset) {
+            Renter.find({ Asset: `${req.query.Asset}` })
                 .then(docs => { res.json(docs) })
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
@@ -56,24 +62,25 @@ exports.renterDBController = {
     },
 
     getRenter(req, res) {
-        Renter.findOne({ Id: parseInt(req.params.Id) })
+        Renter.findOne({ id: parseInt(req.params.id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
     },
 
     async addRenter(req, res) {
-        const temp = await Renter.findOne({}).sort({ _Id: -1 }).limit(1);
-        let Id = temp.Id;
+        const temp = await Renter.findOne({}).sort({ _id: -1 }).limit(1);
+        let id = temp.id;
         const newRenter = new Renter({
-            "Id": Id + 1,
-            "firstName": req.query.firstName,
-            "lastName": req.query.lastName,
-            "Gender": req.query.Gender,
-            "Phone": req.query.Phone,
-            "Email": req.query.Email,
-            "JobTitle": req.query.JobTitle,
-            "Budget": req.query.Budget
+            "id": id + 1,
+            "FirstName": req.body.FirstName,
+            "LastName": req.body.LastName,
+            "Gender": req.body.Gender,
+            "Phone": req.body.Phone,
+            "Email": req.body.Email,
+            "JobTitle": req.body.JobTitle,
+            "Budget": req.body.Budget,
+            "Asset": req.body.Asset
         });
 
         newRenter.save()
@@ -90,7 +97,7 @@ exports.renterDBController = {
     },
 
     deleteRenter(req, res) {
-        Renter.findOneAndDelete({ Id: parseInt(req.params.Id) })
+        Renter.findOneAndDelete({ id: parseInt(req.params.id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },

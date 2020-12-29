@@ -5,7 +5,48 @@
         "LastName": "Matthaus",
         "Gender": "Female",
         "Phone": "667-873-2068",
-        "Email": "dmatthaus0@dailymotion.com"
+        "Email": "dmatthaus0@dailymotion.com",
+        "Assets": [
+            {
+                "id" : 1,
+                "City": "Czarne",
+                "Street": "80301 Merry Place",
+                "Neighborhood": "Manufacturers",
+                "Zip": "60681-6200",
+                "Country": "Poland",
+                "Rooms": 9,
+                "SquareFeet": 70,
+                "Floors": 5,
+                "Parking": true,
+                "Elevator": true,
+                "PetsAllowed": false,
+                "Condition": "Great",
+                "Price": 4259.1,
+                "Avilability": "05/12/2021",
+                "Description": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+                "Want": false
+            },
+            {
+                "id" : 2,
+                "City": "Sakété",
+                "Street": "10 Sycamore Terrace",
+                "Neighborhood": "Vera",
+                "Zip": "54458-302",
+                "Country": "Benin",
+                "Rooms": 7,
+                "SquareFeet": 81,
+                "Floors": 4,
+                "Parking": false,
+                "Elevator": false,
+                "PetsAllowed": true,
+                "Condition": "Good",
+                "Price": 3184.96,
+                "Avilability": "23/12/2020",
+                "Description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+                "Want": false
+            }
+
+        ]
     },
     {
         "id": 2,
@@ -13,7 +54,8 @@
         "LastName": "Gawkes",
         "Gender": "Female",
         "Phone": "197-494-8998",
-        "Email": "kgawkes1@angelfire.com"
+        "Email": "kgawkes1@angelfire.com",
+        "Assets":[]
     },
     {
         "id": 3,
@@ -21,7 +63,8 @@
         "LastName": "Boome",
         "Gender": "Female",
         "Phone": "358-623-6691",
-        "Email": "sboome2@opensource.org"
+        "Email": "sboome2@opensource.org",
+        "Assets":[]
     },
     {
         "id": 4,
@@ -29,7 +72,8 @@
         "LastName": "Finessy",
         "Gender": "Female",
         "Phone": "866-500-2836",
-        "Email": "vfinessy3@qq.com"
+        "Email": "vfinessy3@qq.com",
+        "Assets":[]
     },
     {
         "id": 5,
@@ -37,6 +81,7 @@
         "LastName": "Flowerdew",
         "Gender": "Male",
         "Phone": "697-231-6248",
-        "Email": "cflowerdew4@dot.gov"
+        "Email": "cflowerdew4@dot.gov",
+        "Assets":[]
     }
 ]

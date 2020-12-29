@@ -1,17 +1,9 @@
 const { Schema, model } = require('mongoose');
-//const assetSchema = require('./asset');
-//const personalDetailsSchema = require('./personalDetails');
+const assetSchema = require('./asset');
 
-// const personalDetailsSchema = new Schema({
-//     first_name: {type: String},
-//     last_name: {type: String},
-//     gender: { type: String},
-//     Phone: {type: String},
-//     Email: { type: String},
-// });
 
 const renterSchema = new Schema({
-    Id: { type: Number },
+    id: { type: Number },
     FirstName: {type: String},
     LastName: {type: String},
     Gender: { type: String},
@@ -19,6 +11,7 @@ const renterSchema = new Schema({
     Email: { type: String},
     JobTitle: {type: String },
     Budget: {type: String },
+    Asset: assetSchema,
 }, { collection: 'renters'});
 
 

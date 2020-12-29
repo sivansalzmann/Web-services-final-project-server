@@ -1,12 +1,10 @@
 const { query } = require('express');
-const Owner = require('../Models/owner');
-const Assets = require('../Models/asset');
+const Owner = require('./Models/owner');
 
 
 exports.ownerDBController = {
 
     getOwners(req, res) {
-
         if (req.query.FirstName) {
             Owner.find({ FirstName: `${req.query.FirstName}` })
                 .then(docs => { res.json(docs) })
@@ -37,12 +35,6 @@ exports.ownerDBController = {
                 .catch(err => console.log(`Error getting the data from DB: ${err}`));
         }
 
-        else if (req.query.Assets) {
-            Owner.find({ Assets: `${req.query.Assets}` })
-                .then(docs => { res.json(docs) })
-                .catch(err => console.log(`Error getting the data from DB: ${err}`));
-        }
-
          
         else {
             Owner.find({})
@@ -52,7 +44,7 @@ exports.ownerDBController = {
     },
 
     getowner(req, res) {
-        Owner.findOne({ id: parseInt(req.params.id) })
+        Owner.findOne({ Id: parseInt(req.params.Id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
@@ -60,16 +52,15 @@ exports.ownerDBController = {
 
 
     async addOwner(req, res) {
-        const temp = await Owner.findOne({}).sort({ _id: -1 }).limit(1);
-        let id = temp.id;
+        const temp = await Owner.findOne({}).sort({ _Id: -1 }).limit(1);
+        let Id = temp.Id;
         const newOwner = new Owner({
-            "id": id + 1,
+            "Id": id + 1,
             "FirstName": req.body.FirstName,
             "LastName": req.body.LastName,
             "Gender": req.body.Gender,
             "Phone": req.body.Phone,
-            "Email": req.body.Email,
-            "Assets":req.body.Asset
+            "Email": req.body.Email
         });
 
         newOwner.save()
@@ -79,17 +70,16 @@ exports.ownerDBController = {
     },
 
     updateOwner(req, res) {
-        Owner.updateOne({ id: parseInt(req.params.id) }, req.body)
+        Owner.updateOne({ Id: parseInt(req.params.Id) }, req.body)
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
         
     },
     
     deleteOwner(req, res) {
-        Owner.findOneAndDelete({ id: parseInt(req.params.id) })
+        Owner.findOneAndDelete({ Id: parseInt(req.params.Id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
-
 };
 

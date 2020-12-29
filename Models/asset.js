@@ -1,7 +1,7 @@
-const { Schema, model } = require('mongoose');
+const { Schema } = require('mongoose');
 
 const assetSchema = new Schema({
-    Id: { type: Number },
+    id: { type: Number },
     City: {type: String },
     Street: {type: String },
     Neighborhood:  { type: String },
@@ -18,10 +18,6 @@ const assetSchema = new Schema({
     Avilability: { type: String },
     Description: { type: String },
     Want : { type: Boolean },
-    OwnerId : {type : String},
-    RenterId : {type : String},
 }, { collection: 'assets'});
 
-const Asset = model('Asset', assetSchema);
-
-module.exports = Asset;
+module.exports = assetSchema;

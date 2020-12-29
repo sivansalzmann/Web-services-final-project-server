@@ -1,18 +1,14 @@
 const { Schema, model } = require('mongoose');
-// const assetSchema = require('./asset');
-// const personalDeatilsScema = require('./personalDetails');
+const assetSchema = require('./asset');
 
-const personalDetailsSchema = new Schema({
+const ownerSchema = new Schema({
+    id: { type: Number},
     FirstName: {type: String},
     LastName: {type: String},
     Gender: { type: String},
     Phone: {type: String},
     Email: { type: String},
-});
-
-const ownerSchema = new Schema({
-    Id: { type: Number},
-    PersonalDeatils: {type:personalDetailsSchema},
+    Assets: [assetSchema],
 }, { collection: 'owners'});
 
 

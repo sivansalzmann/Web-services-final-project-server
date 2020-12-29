@@ -1,5 +1,5 @@
 const { Router } = require('express'); 
-const{ assetDBController} = require('../controllers/asset.ctrl');
+const{ assetDBController} = require('./asset.ctrl');
 
 const assetRouter = new Router();  
 
@@ -8,5 +8,5 @@ assetRouter.get('/:Id', assetDBController.getAsset);
 assetRouter.post('/', assetDBController.addAsset);
 assetRouter.put('/:Id', assetDBController.updateAsset);
 assetRouter.delete('/:Id', assetDBController.deleteAsset);
-assetRouter.get('/', assetDBController.initialize());
+// assetRouter.get('/', assetDBController.initialize());
 module.exports = {assetRouter};
