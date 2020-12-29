@@ -1,4 +1,3 @@
-// const { query } = require('express');
 const Asset  = require('../Models/asset');
 
 exports.assetDBController = {
@@ -142,7 +141,8 @@ exports.assetDBController = {
             "Avilability": req.body.Avilability,
             "Description":req.body.Description,
             "Want":false,
-            "OwnerId": 0 ,
+            //fix it
+            "OwnerId": 2 ,
             "RenterId": 0 
         });
 
@@ -163,8 +163,10 @@ exports.assetDBController = {
         Asset.findOneAndDelete({ id: parseInt(req.params.id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
-    }
+    },
 };
+
+
 
   // This sample uses the Autocomplete widget to help the user select a
 // place, then it retrieves the address components associated with that
