@@ -166,6 +166,7 @@ exports.assetDBController = {
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
 
+<<<<<<< Updated upstream
     // getApi(req,res) {
     //     let google = String;
     //     //const apiAdd = axios.get('put huroko url...')
@@ -196,6 +197,9 @@ exports.assetDBController = {
     //         }
 
         // }
+=======
+   
+>>>>>>> Stashed changes
 };
 
 
