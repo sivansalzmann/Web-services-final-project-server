@@ -195,7 +195,7 @@ exports.assetDBController = {
     //             // input.value = placeResult.name;
     //         }
 
-        }
+        // }
 };
 
 
