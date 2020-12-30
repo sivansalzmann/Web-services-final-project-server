@@ -166,40 +166,7 @@ exports.assetDBController = {
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
 
-<<<<<<< Updated upstream
-    // getApi(req,res) {
-    //     let google = String;
-    //     //const apiAdd = axios.get('put huroko url...')
-    //     // .then(response) => {
-    //         $(document).ready(function () {
-    //             google.maps.event.addDomListener(window, 'load', initialize);
-    //         });
-            
-    //         function initialize() {
-    //             var options = {
-    //                 types: ['(regions)'],
-    //                }
-    //                var options2 = {
-    //                 types: ['address'],
-    //                }
-    //                var options3 = {
-    //                 types: ['counrty'],
-    //                }
-    //             var inputCity = document.getElementById('city');
-    //             var inputStreet = document.getElementById('street');
-    //             var inputCountry = document.getElementById('counrty');
-    //             var autocomplete = new google.maps.places.Autocomplete(inputCity,options);
-    //             var autocomplete2 = new google.maps.places.Autocomplete(inputStreet,options2);
-    //             var autocomplete3 = new google.maps.places.Autocomplete(inputCountry,options3);
-    //             // placeResult = autocomplete.getPlace();
-    //             // console.log(placeResult);//This will get only the address
-    //             // input.value = placeResult.name;
-    //         }
 
-        // }
-=======
-   
->>>>>>> Stashed changes
 };
 
 

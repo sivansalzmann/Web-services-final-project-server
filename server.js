@@ -14,17 +14,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true})); 
 
 
-<<<<<<< Updated upstream
-app.use((req,res,next) =>{
 
-    res.header('Access-Control-Allow-Methods', 'PUT, DELETE');
-    res.header('Access-Control-Allow-Origin','*');
-=======
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods','POST, PUT, GET, DELETE, OPTIONS')
->>>>>>> Stashed changes
     res.set('Content-Type', 'application/json');
     next();
 });
