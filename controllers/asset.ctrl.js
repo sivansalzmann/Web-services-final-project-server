@@ -1,3 +1,4 @@
+const { response } = require('express');
 const Asset  = require('../Models/asset');
 
 exports.assetDBController = {
@@ -166,7 +167,17 @@ exports.assetDBController = {
     },
 };
 
+// ______________________API____________________
+exports.apiController = {
+    getApi(req,res) {
+        let google = String;
 
+        const apiAdd = axios.get('put huroko url...')
+        .then(response) => {
+            
+        }
+    }
+}
 
   // This sample uses the Autocomplete widget to help the user select a
 // place, then it retrieves the address components associated with that
