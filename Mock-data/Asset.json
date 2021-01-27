@@ -16,7 +16,7 @@
         "Price": 8214.85,
         "Avilability": "28/08/2021",
         "Description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
-        "Want": true,
+        "WantAsset": true,
         "OwnerId": 1,
         "RenterId": 1
     },
@@ -37,7 +37,7 @@
         "Price": 3939.13,
         "Avilability": "03/12/2021",
         "Description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.",
-        "Want": false,
+        "WantAsset": false,
         "OwnerId": 2,
         "RenterId": 0
     },
@@ -58,7 +58,7 @@
         "Price": 7015.57,
         "Avilability": "28/04/2020",
         "Description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
-        "Want": true,
+        "WantAsset": true,
         "OwnerId": 3,
         "RenterId": 3
     },
@@ -79,7 +79,7 @@
         "Price": 6654.89,
         "Avilability": "29/03/2020",
         "Description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
-        "Want": false,
+        "WantAsset": false,
         "OwnerId": 4,
         "RenterId": 0
     },
@@ -100,7 +100,7 @@
         "Price": 3042.36,
         "Avilability": "07/08/2021",
         "Description": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
-        "Want": false,
+        "WantAsset": false,
         "OwnerId": 5,
         "RenterId": 0
     },
@@ -121,7 +121,7 @@
         "Price": 7774.34,
         "Avilability": "24/05/2020",
         "Description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
-        "Want": false,
+        "WantAsset": false,
         "OwnerId": 6,
         "RenterId": 6
     },
@@ -142,7 +142,7 @@
         "Price": 8067.74,
         "Avilability": "25/02/2020",
         "Description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
-        "Want": false,
+        "WantAsset": false,
         "OwnerId": 7,
         "RenterId": 0
     },
@@ -163,7 +163,7 @@
         "Price": 5648.21,
         "Avilability": "16/11/2021",
         "Description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
-        "Want": true,
+        "WantAsset": true,
         "OwnerId": 8,
         "RenterId": 8
     },
@@ -184,7 +184,7 @@
         "Price": 8897.35,
         "Avilability": "09/09/2020",
         "Description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
-        "Want": false,
+        "WantAsset": false,
         "OwnerId": 9,
         "RenterId": 9
     },
@@ -205,7 +205,7 @@
         "Price": 2635.6,
         "Avilability": "14/10/2021",
         "Description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo.",
-        "Want": false,
+        "WantAsset": false,
         "OwnerId": 10,
         "RenterId": 0
     }

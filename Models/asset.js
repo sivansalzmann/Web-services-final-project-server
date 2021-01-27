@@ -14,10 +14,10 @@ const assetSchema = new Schema({
     Elevator: { type: Boolean },
     PetsAllowed: { type: Boolean },
     Condition: { type: String },
-    Price: { type: String },
+    Price: { type: Number },
     Avilability: { type: String },
     Description: { type: String },
-    Want : { type: Boolean },
+    WantAsset : { type: Boolean },
     OwnerId : { type: Number },
     RenterId : { type: Number },
 }, { collection: 'assets'});

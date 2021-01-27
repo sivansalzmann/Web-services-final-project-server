@@ -3,9 +3,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 
-const {assetRouter} = require("./routers/routerAsset");
-const {renterRouter} = require("./routers/routerRenter");
 const {ownerRouter} = require("./routers/routerOwner");
+const {renterRouter} = require("./routers/routerRenter");
+const {assetRouter} = require("./routers/routerAsset");
 const {googleRouter} = require("./routers/routergoogleAPI");
 
 
@@ -23,9 +23,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api/assets', assetRouter);
-app.use('/api/renters', renterRouter);
 app.use('/api/owners', ownerRouter);
+app.use('/api/renters', renterRouter);
+app.use('/api/assets', assetRouter);
 app.use('/api/assetsAPI', googleRouter);
 
 
