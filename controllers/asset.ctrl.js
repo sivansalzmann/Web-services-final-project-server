@@ -20,14 +20,14 @@ exports.assetDBController = {
         Asset.find(filters)
         .then(docs => { res.json(docs) })
         .catch(err => console.log(`Error getting the data from DB: ${err}`));
-},
+    },
 
     getAsset(req, res) {
     Asset.findOne({ id: parseInt(req.params.id) })
         .then(docs => { res.json(docs) })
         .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
-},
+    },
 
 async addAsset(req, res) {
     const temp = await Asset.findOne({}).sort({ id: -1 }).limit(1);
