@@ -8,6 +8,13 @@ exports.renterDBController = {
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
     },
+    getRenters(req, res) {
+        Renter.findOne({ id: parseInt(req.params.id) })
+            .then(docs => { res.json(docs) })
+            .catch(err => console.log(`Error getting the data from DB: ${err}`));
+    
+    },
+
 
     async addRenter(req, res) {
         const temp = await Renter.findOne({}).sort({ id: -1 }).limit(1);
