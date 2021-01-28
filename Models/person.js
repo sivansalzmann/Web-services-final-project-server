@@ -8,6 +8,7 @@ const personSchema = new Schema({
     Gender: { type: String},
     Phone: {type: String},
     Email: { type: String},
+    PassWord: { type: String}
 });
 
 const ownerSchema = new Schema ({
