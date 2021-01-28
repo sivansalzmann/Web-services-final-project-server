@@ -9,12 +9,12 @@ exports.ownerDBController = {
 
     },
 
-    // getOwners(req, res) {
-    //     Owner.findOne({ id: parseInt(req.params.id) })
-    //         .then(docs => { res.json(docs) })
-    //         .catch(err => console.log(`Error getting the data from DB: ${err}`));
+    getOwners(req, res) {
+        Owner.findOne({ id: parseInt(req.params.id) })
+            .then(docs => { res.json(docs) })
+            .catch(err => console.log(`Error getting the data from DB: ${err}`));
     
-    // },
+    },
 
     async addOwner(req, res) {
         const temp = await Owner.findOne({}).sort({ id: -1 }).limit(1);
