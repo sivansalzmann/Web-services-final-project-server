@@ -29,8 +29,7 @@ app.use('/api/assets', assetRouter);
 app.use('/api/assetsAPI', googleRouter);
 
 
-app.use((err, req, res, next) => {
-    console.error(err.stack);
+app.use((req, res, next) => {
     res.status(500).send('Something is broken!');
 });
 
