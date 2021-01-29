@@ -10,7 +10,7 @@ exports.renterDBController = {
     },
     
     getRenters(req, res) {
-        Renter.findOne({ id: parseInt(req.params.id) })
+        Renter.find({})
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     
@@ -27,7 +27,8 @@ exports.renterDBController = {
                 "LastName": req.body.Person.LastName,
                 "Gender": req.body.Person.Gender,
                 "Phone": req.body.Person.Phone,
-                "Email": req.body.Person.Email
+                "Email": req.body.Person.Email,
+                "Password": req.body.Person.Password
             },
             "JobTitle": req.body.JobTitle,
             "Budget": req.body.Budget,
