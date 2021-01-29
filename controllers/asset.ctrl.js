@@ -23,7 +23,7 @@ exports.assetDBController = {
     },
 
     getAsset(req, res) {
-    Asset.find({})
+    Asset.findOne({ id: parseInt(req.params.id) })
         .then(docs => { res.json(docs) })
         .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
