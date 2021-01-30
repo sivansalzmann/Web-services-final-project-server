@@ -19,17 +19,20 @@ exports.assetDBController = {
         if (req.query.Price)
             filters["Price"] = { $gt: req.query.Price }
         if (req.query.Avilability)
-            filters["Avilability"] = { $lt:req.query.Avilability }
+            filters["Avilability"] = { $lt: req.query.Avilability }
         if (req.query.Parking == true)
-            filters["Parking"] = req.query.Parking 
+            filters["Parking"] = req.query.Parking
         if (req.query.PetsAllowed == true)
-            filters["PetsAllowed"] = req.query.PetsAllowed 
+            filters["PetsAllowed"] = req.query.PetsAllowed
         if (req.query.Elevator == true)
             filters["Elevator"] = req.query.Elevator 
         if (req.query.RenterId)
             filters["RenterId"] = req.query.RenterId 
         if (req.query.OwnerId)
             filters["OwnerId"] = req.query.OwnerId 
+            filters["Elevator"] = req.query.Elevator
+        if (req.query.OwnerId)
+            filters["OwnerId"] = req.query.OwnerId
 
         Asset.find(filters)
             .then(docs => { res.json(docs) })
