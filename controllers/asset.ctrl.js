@@ -29,9 +29,6 @@ exports.assetDBController = {
         if (req.query.RenterId)
             filters["RenterId"] = req.query.RenterId 
         if (req.query.OwnerId)
-            filters["OwnerId"] = req.query.OwnerId 
-            filters["Elevator"] = req.query.Elevator
-        if (req.query.OwnerId)
             filters["OwnerId"] = req.query.OwnerId
 
         Asset.find(filters)
