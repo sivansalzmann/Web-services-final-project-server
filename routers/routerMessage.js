@@ -3,7 +3,7 @@ const {messageDBController} = require('../controllers/message.ctrl');
 
 const messageRouter = new Router();  
 
-messageRouter.get('/', messageDBController.getMessage);
+messageRouter.get('/', messageDBController.getMessages);
 messageRouter.get('/:id', messageDBController.getMessage);
 messageRouter.post('/', messageDBController.addMessage);
 messageRouter.put('/:id', messageDBController.updateMessage);

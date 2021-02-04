@@ -2,8 +2,12 @@ const { response } = require('express');
 const Message = require('../Models/message');
 
 exports.messageDBController = {
-    getMessage(req, res) {
-        Message.find({})
+    getMessages(req, res) {
+        const filters = {}
+        if (req.query.RenterId)
+            filters["RenterId"] = req.query.RenterId
+
+        Message.find(filters)
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     
@@ -16,14 +20,15 @@ exports.messageDBController = {
 
     },
 
-
     async addMessage(req, res) {
         const temp = await Message.findOne({}).sort({ id: -1 }).limit(1);
         let id = temp.id;
         const newMessage = new Message({
             "id": id + 1,
-            "Main": req.body.Person.Main,
-          
+            "Timestamp": req.body.Timestamp,
+            "OwnerId": req.body.OwnerId,
+            "RenterId": req.body.RenterId,    
+            "Message": req.body.Message      
         });
 
         newMessage.save()

@@ -6,12 +6,10 @@
         "Gender": "Female",
         "Phone": "151-250-9871",
         "Email": "sgauntley0@theglobeandmail.com",
-        "JobTitle": "Recruiting Manager",
-        "Budget": "$4890.14",
-        "AssetsWishList": [9,2,7],
+        "Age" : "20",
+        "Country": "Israel",
         "Renter": true,
-        "Owner": false,
-        "Password": "dm114"
+        "Owner": false
     },
     {
         "id": 2,
@@ -20,12 +18,10 @@
         "Gender": "Female",
         "Phone": "683-521-2602",
         "Email": "mcatenot1@java.com",
-        "JobTitle": "Social Worker",
-        "Budget": "$2870.14",
-        "AssetsWishList": [1,5,8],
+        "Age" : "22",
+        "Country": "Poland",
         "Renter": false,
-        "Owner": true,
-        "Password": "s3234"
+        "Owner": true
     },
     {
         "id": 3,
@@ -34,12 +30,35 @@
         "Gender": "Male",
         "Phone": "110-122-6687",
         "Email": "kdottridge2@msu.edu",
-        "JobTitle": "Analog Circuit Design manager",
-        "Budget": "$6351.27",
-        "AssetsWishList": [1,3,7],
+        "Age" : "58",
+        "Country": "USA",
         "Renter": true,
-        "Owner": true,
-        "Password": "v5634"
+        "Owner": true
+    },
+    {
+        "id": 4,
+        "FirstName": "maya",
+        "LastName": "ssss",
+        "Gender": "Male",
+        "Phone": "110-122-6687",
+        "Email": "kdottridge2@msu.edu",
+        "Age" : "66",
+        "Country": "China",
+        "Renter": true,
+        "Owner": true
+        
+    },
+    {
+        "id": 5,
+        "FirstName": "lala",
+        "LastName": "Sssss",
+        "Gender": "Male",
+        "Phone": "110-122-6687",
+        "Email": "kdottridge2@msu.edu",
+        "Age" : "44",
+        "Country": "Israel",
+        "Renter": true,
+        "Owner": true
         
     }
    

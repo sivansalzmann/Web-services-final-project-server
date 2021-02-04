@@ -5,6 +5,7 @@ const port = process.env.PORT || 3000;
 const {assetRouter} = require("./routers/routerAsset");
 const {userRouter} = require("./routers/routerUser");
 const {messageRouter} = require("./routers/routerMessage");
+const {renterDeatilsRouter} = require("./routers/routerRenterDeatils");
 const {googleRouter} = require("./routers/routergoogleAPI");
 
 
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 app.use('/api/assets', assetRouter);
 app.use('/api/users',userRouter);
 app.use('/api/messages', messageRouter);
+app.use('/api/renterDeatils', renterDeatilsRouter);
 app.use('/api/assetsAPI', googleRouter);
 
 

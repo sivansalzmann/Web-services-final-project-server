@@ -2,11 +2,11 @@ const { Schema,model } = require('mongoose');
 
 const assetSchema = new Schema({
     id: { type: Number },
-    City: {type: String },
+    City: {type: String , required: true },
     Street: {type: String },
     Neighborhood:  { type: String },
     Zip: { type: String },
-    Country: { type: String },
+    Country: { type: String ,required: true },
     Rooms: { type: Number },
     SquareFeet: { type: Number },
     Floors: { type: Number },
@@ -14,11 +14,11 @@ const assetSchema = new Schema({
     Elevator: { type: Boolean },
     PetsAllowed: { type: Boolean },
     Condition: { type: String },
-    Price: { type: Number },
-    Avilability: { type: String },
+    Price: { type: Number ,required: true },
+    Avilability: { type: String ,required: true },
     Description: { type: String },
-    WantAsset : { type: Boolean },
-    OwnerId : { type: Number },
+    UrlPicture: {type:String},
+    OwnerId : { type: Number ,required: true},
     RenterId : { type: Number },
 }, { collection: 'assets'});
 
