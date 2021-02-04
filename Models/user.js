@@ -9,10 +9,8 @@ const userSchema = new Schema({
     Email: { type: String},
     JobTitle: {type: String },
     Budget: {type: String },
-    AssetsWishList: [{type:Number}],
     Renter: {type:Boolean},
     Owner: {type:Boolean},
-    Password: { type: String}
 },{collection: 'users'});
 
 

@@ -20,7 +20,8 @@ exports.assetDBController = {
             filters["Price"] = { $gt: req.query.Price }
         if (req.query.Avilability)
             filters["Avilability"] = { $lt: req.query.Avilability }
-        if (req.query.Parking == true)
+        if (req.query.Parking)
+            console.log(req.query.Parking)
             filters["Parking"] = req.query.Parking
         if (req.query.PetsAllowed == true)
             filters["PetsAllowed"] = req.query.PetsAllowed
@@ -28,6 +29,8 @@ exports.assetDBController = {
             filters["Elevator"] = req.query.Elevator 
         if (req.query.RenterId)
             filters["RenterId"] = req.query.RenterId 
+        if (req.query.RenterId)
+            filters["RenterId"] = req.query.Elevator
         if (req.query.OwnerId)
             filters["OwnerId"] = req.query.OwnerId
 
