@@ -11,6 +11,7 @@ const userSchema = new Schema({
     Budget: {type: String },
     Renter: {type:Boolean},
     Owner: {type:Boolean},
+    Url: {type:URL}
 },{collection: 'users'});
 
 
