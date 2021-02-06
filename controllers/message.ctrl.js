@@ -27,7 +27,7 @@ exports.messageDBController = {
         let id = temp.id;
         const newMessage = new Message({
             "id": id + 1,
-            "Timestamp": temp,
+            "Timestamp": req.body.Timestamp,
             "OwnerId": req.body.OwnerId,
             "RenterId": req.body.RenterId,    
             "Message": req.body.Message      

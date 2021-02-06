@@ -65,7 +65,7 @@ exports.assetDBController = {
             "Description": req.body.Description,
             "UrlPicture": req.body.UrlPicture,
             "OwnerId": req.body.OwnerId,
-            "RenterId": 0
+            "RenterId": req.body.RenterId,
         });
 
         newAsset.save()
