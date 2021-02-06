@@ -1,6 +1,7 @@
 //const asset = require('../models/asset');
 const axios = require('axios').default;
 
+
 exports.googleAPIDBController = {
 
     getAssetLocationFromAPI(req, res) {
