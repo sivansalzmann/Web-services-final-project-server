@@ -63,7 +63,8 @@ exports.assetDBController = {
             "Price": req.body.Price,
             "Avilability": req.body.Avilability,
             "Description": req.body.Description,
-            "OwnerId": 0,
+            "UrlPicture": req.body.UrlPicture,
+            "OwnerId": req.body.OwnerId,
             "RenterId": 0
         });
 

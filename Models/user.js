@@ -9,6 +9,7 @@ const userSchema = new Schema({
     Country: {type: String},
     Phone: {type: String, required: true },
     Email: { type: String, required: true },
+    ImageUrl: {type:String},
     IsRenter: {type:Boolean},
     IsOwner: {type:Boolean},
 },{collection: 'users'});
