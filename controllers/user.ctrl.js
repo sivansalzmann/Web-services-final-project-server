@@ -34,7 +34,18 @@ exports.userDBController = {
 
     },
     updateUser(req, res) {
-        User.updateOne({ id: parseInt(req.params.id) }, req.body)
+        const {body} = req
+        const update = {}
+        if (body.Country != "") {
+            update.Country = body.Country
+        }
+        if (body.Email != "") {
+            update.Email = body.Email
+        }
+        if (body.Phone != "") {
+            update.Phone = body.Phone
+        }
+        User.updateOne({ id: parseInt(req.params.id) }, update)
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
