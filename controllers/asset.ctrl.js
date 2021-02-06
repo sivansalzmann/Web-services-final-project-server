@@ -75,10 +75,11 @@ exports.assetDBController = {
     },
 
     updateAsset(req, res) {
-
-        Asset.updateOne({ id: parseInt(req.params.id) }, req.body)
+        if (req.body.City != "" || req.body.Street != "" || req.body.Zip != null || req.body.Country != "" || req.body.Neighborhood != "" || req.body.Rooms != null || req.body.SquareFeet != null || req.body.Floors != null || req.body.Parking != "" || req.body.Elevator != "" || req.body.PetsAllowed != "" || req.body.Condition != "" || req.body.Price != null || req.body.Avilability != "" ){
+            Asset.updateOne({ id: parseInt(req.params.id) },req.body)
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
+        }
     },
 
     deleteAsset(req, res) {
