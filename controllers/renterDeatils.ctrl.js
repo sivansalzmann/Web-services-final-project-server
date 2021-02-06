@@ -26,11 +26,24 @@ exports.renterDeatilsDBController = {
 
     },
     updateRenterDeatils(req, res) {
-        RenterDeatils.updateOne({ id: parseInt(req.params.id) }, req.body)
+        const {body} = req
+        const update = {}
+        if (body.JobTitle != "") {
+            update.JobTitle = body.JobTitle
+        }
+        if (body.Budget != "") {
+            update.Budget = body.Budget
+        }
+        if (body.FavoriteCountry != "") {
+            update.FavoriteCountry = body.FavoriteCountry
+        }
+        RenterDeatils.updateOne({ id: parseInt(req.params.id) }, update)
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
+        
 
-    },
+    }
+
 };
 
 

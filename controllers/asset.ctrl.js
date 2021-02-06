@@ -75,11 +75,50 @@ exports.assetDBController = {
     },
 
     updateAsset(req, res) {
-        if (req.body.City != "" || req.body.Street != "" || req.body.Zip != null || req.body.Country != "" || req.body.Neighborhood != "" || req.body.Rooms != null || req.body.SquareFeet != null || req.body.Floors != null || req.body.Parking != "" || req.body.Elevator != "" || req.body.PetsAllowed != "" || req.body.Condition != "" || req.body.Price != null || req.body.Avilability != "" ){
-            Asset.updateOne({ id: parseInt(req.params.id) },req.body)
+        const {body} = req
+        const update = {}
+        if (body.City != "") {
+            update.City = body.City
+        }
+        if (body.Street != "") {
+            update.Street = body.Street
+        }
+        if (body.Zip != "") {
+            update.Zip = body.Zip
+        }
+        if (body.Country != "") {
+            update.Country = body.Country
+        }
+        if (body.Neighborhood != "") {
+            update.Neighborhood = body.Neighborhood
+        }
+        if (body.Rooms != "") {
+            update.Rooms = body.Rooms
+        }
+        if (body.SquareFeet != "") {
+            update.SquareFeet = body.SquareFeet
+        }
+        if (body.Floors != "") {
+            update.Floors = body.Floors
+        }
+        if (body.Condition != "") {
+            update.Condition = body.Condition
+        }
+        if (body.Price != "") {
+            update.Price = body.Price
+        }
+        if (body.Avilability != "") {
+            update.Avilability = body.Avilability
+        }
+        if (body.Description != "") {
+            update.Description = body.Description
+        }
+        if (body.UrlPicture != "") {
+            update.UrlPicture = body.UrlPicture
+        }
+            Asset.updateOne({ id: parseInt(req.params.id) },update)
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
-        }
     },
 
     deleteAsset(req, res) {
@@ -87,7 +126,6 @@ exports.assetDBController = {
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
-
 
 };
 
