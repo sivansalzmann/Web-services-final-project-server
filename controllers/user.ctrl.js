@@ -14,16 +14,17 @@ exports.userDBController = {
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
     },
-    async addUser(req, res) {
+    async addUser(user,req, res) {
         const temp = await User.findOne({}).sort({ id: -1 }).limit(1);
         let id = temp.id;
         const newUser = new User({
             "id": id + 1,
-            "FirstName": req.body.FirstName,
-            "LastName": req.body.LastName,
+            "FirstName": user.FirstName,
+            "LastName": user.LastName,
+            "Email": user.Email,
+            "ImageUrl": user.ImageUrl,
             "Gender": req.body.Gender,
             "Phone": req.body.Phone,
-            "Email": req.body.Email,
             "JobTitle": req.body.JobTitle,
             "Budget": req.body.Budget,
         });

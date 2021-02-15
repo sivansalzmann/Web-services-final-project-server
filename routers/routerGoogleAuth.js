@@ -5,4 +5,5 @@ const googleAuthRouther = new Router();
 
 googleAuthRouther.post('/login', authDBController.googleAuth);
 
+
 module.exports = { googleAuthRouther };

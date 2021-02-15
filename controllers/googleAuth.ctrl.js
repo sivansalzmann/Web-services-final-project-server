@@ -10,7 +10,7 @@ exports.authDBController = {
         async function verify() {
             const ticket = await client.verifyIdToken({
                 idToken: req.body.token,
-                audience: CLIENT_ID,  
+                audience: process.env.CLIENT_ID,  
                 // Specify the CLIENT_ID of the app that accesses the backend
                 // Or, if multiple clients access the backend:
                 //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
@@ -24,8 +24,31 @@ exports.authDBController = {
         console.log(user)
         res.send('sucsses')
 
-        User.findOne
+        await User.findOne({Email: payload['email']})
+        .then(docs => {
+            if (docs) {
+                console.log('the user exists')
+                // req.session.user = docs
+                // console.log("createAuthLogin sess: "+req.session)
+                res.cookie('user', docs, {expires: new Date(Date.now() + 3600000)})
+                console.log("hhh "+ req.cookies.user)
+                console.log(req)
+                res.json(docs)
+            } else {
+                console.log('the user does NOT exist')
+                let user = {
+                    FirstName: payload['given_name'],
+                    LastName: payload['family_name'],
+                    Email: payload['email'],
+                    ImageUrl: payload['picture'],
+                }
+                // req.session.payload = user
+                user.ctrl.createUser(user, req, res) //send to controller user
+            }
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
     }
-
-
 }
