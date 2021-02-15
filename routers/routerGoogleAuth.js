@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const {authDBController} = require('../controllers/googleAuth.ctrl');
+const authDBController = require('../controllers/googleAuth.ctrl');
 
 const googleAuthRouther = new Router();  
 
