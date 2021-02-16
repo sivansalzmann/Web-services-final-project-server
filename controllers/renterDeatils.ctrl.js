@@ -1,5 +1,6 @@
 const { response } = require('express');
 const RenterDeatils = require('../Models/renterDeatils');
+const { userDBController } = require('./user.ctrl');
 
 exports.renterDeatilsDBController = {
 
@@ -10,10 +11,12 @@ exports.renterDeatilsDBController = {
 
     },
     async addRenterDeatils(req, res) {
-        const temp = await User.findOne({}).sort({ id: -1 }).limit(1);
+        console.log("heree")
+        const temp = await RenterDeatils.findOne({}).sort({ id: -1 }).limit(1);
         let id = temp.id;
         const newRenterDeatils = new RenterDeatils({
             "id": id + 1,
+            "googleID" : req.body.googleID,
             "RenterId": req.body.RenterId,
             "JobTitle": req.body.JobTitle,
             "Budget": req.body.Budget,

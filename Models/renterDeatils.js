@@ -2,7 +2,8 @@ const { Schema, model } = require('mongoose');
 
 const renterDeatilsScema = new Schema({
     id: { type: Number},
-    RenterId:{ type: Number, require:true},
+    googleID: {type:Number, require:true},
+    RenterId : {type:Number, require:true},
     JobTitle: {type: String , require:true},
     Budget: {type: String , require:true},
     FavoriteCountry: {type: String , require:true},

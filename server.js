@@ -1,6 +1,12 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
+const morgan = require('morgan')
+const path = require('path')
+const fs = require('fs')
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
+const logStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), { flags: 'a' })
 
 const {assetRouter} = require("./routers/routerAsset");
 const {userRouter} = require("./routers/routerUser");
@@ -8,13 +14,13 @@ const {messageRouter} = require("./routers/routerMessage");
 const {renterDeatilsRouter} = require("./routers/routerRenterDeatils");
 const {googleRouter} = require("./routers/routergoogleAPI");
 const { googleAuthRouther } = require('./routers/routerGoogleAuth');
-const cors = require("cors")
 
-
-app.use(express.json());
-app.use(express.urlencoded({extended: true})); 
 
 app.use(cors({ origin: true, credentials: true }))
+app.use(express.json());
+app.use(express.urlencoded({extended: true})); 
+app.use(cookieParser());
+app.use(morgan('tiny', { stream: logStream }))
 
 
 // app.use((req, res, next) => {

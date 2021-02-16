@@ -16,7 +16,7 @@ exports.messageDBController = {
     },
 
     getMessage(req, res) {
-        Message.findOne({ id: parseInt(req.params.id) })
+        Message.findOne({id: parseInt(req.params.id)})
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 

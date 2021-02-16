@@ -9,7 +9,7 @@ exports.userDBController = {
     
     },
     getUser(req, res) {
-        User.findOne({ id: parseInt(req.params.id) })
+        User.findOne({googleID: req.params.id})
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
@@ -19,14 +19,15 @@ exports.userDBController = {
         let id = temp.id;
         const newUser = new User({
             "id": id + 1,
+            "googleID": user.id,
             "FirstName": user.FirstName,
             "LastName": user.LastName,
             "Email": user.Email,
             "ImageUrl": user.ImageUrl,
-            "Gender": req.body.Gender,
-            "Phone": req.body.Phone,
-            "JobTitle": req.body.JobTitle,
-            "Budget": req.body.Budget,
+            "Gender": "Male",
+            "Phone": "123456",
+            "Age": 100,
+            "Country": "USA"
         });
 
         newUser.save()
@@ -40,20 +41,26 @@ exports.userDBController = {
         if (body.Country != "") {
             update.Country = body.Country
         }
-        if (body.Email != "") {
-            update.Email = body.Email
-        }
+        // if (body.Email != "") {
+        //     update.Email = user.Email
+        // }
         if (body.Phone != "") {
             update.Phone = body.Phone
         }
-        User.updateOne({ id: parseInt(req.params.id) }, update)
-            .then(docs => { res.json(docs) })
+        if (body.Age != "") {
+            update.Age = body.Age
+        }
+        if (body.Gender != "") {
+            update.Gender = body.Gender
+        }
+        User.updateOne({ id: parseInt(req.params.id) } , update)
+            .then(() => res.json(body))
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
     },
     deleteUser(req, res) {
-        User.findOneAndDelete({ id: parseInt(req.params.id) })
-            .then(docs => { res.json(docs) })
+        User.findOneAndDelete({googleID: req.params.id})
+            .then(() => res.json({googleID: `${req.params.id}`}))
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
 };
