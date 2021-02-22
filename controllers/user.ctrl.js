@@ -19,14 +19,12 @@ exports.userDBController = {
     
     },
     getUser(req, res) {
-        console.log("here")
-        User.findOne({googleID: req.params.id})
+        User.findOne({id: req.params.id})
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
     },
     async addUser(user,req, res) {
-        console.log("here")
         const temp = await User.findOne({}).sort({ id: -1 }).limit(1);
         let id = temp.id;
         const newUser = new User({
@@ -69,8 +67,8 @@ exports.userDBController = {
         if (body.IsOwner != "" && body.IsOwner != null) {
             update.IsOwner = body.IsOwner
         }
-        User.updateOne({ googleId: req.params.id } , update)
-            .then(() => res.json(update))
+        User.updateOne({ id: parseInt(req.params.id) },update)
+            .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
     },

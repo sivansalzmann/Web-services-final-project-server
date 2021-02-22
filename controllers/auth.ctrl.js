@@ -20,7 +20,6 @@ verify = async (token) => {
 createAuthLogin = async (req, res, next) => {
     let token = req.body.token
     let payload = await verify(token)
-    console.log(payload)
 
     await User.findOne({googleID: payload['sub']})
         .then(docs => {
