@@ -51,22 +51,22 @@ exports.userDBController = {
     updateUser(req, res) {
         const {body} = req
         const update = {}
-        if (body.Country != "") {
+        if (body.Country != "" && body.Country != null) {
             update.Country = body.Country
         }
-        if (body.Phone != "") {
+        if (body.Phone != "" && body.Phone != null) {
             update.Phone = body.Phone
         }
-        if (body.Age != "") {
+        if (body.Age != "" && body.Age != null) {
             update.Age = body.Age
         }
-        if (body.Gender != "") {
+        if (body.Gender != "" && body.Gender != null) {
             update.Gender = body.Gender
         }
-        if (body.IsRenter != "") {
+        if (body.IsRenter != "" && body.IsRenter != null) {
             update.IsRenter = body.IsRenter
         }
-        if (body.IsOwner != "") {
+        if (body.IsOwner != "" && body.IsOwner != null) {
             update.IsOwner = body.IsOwner
         }
         User.updateOne({ googleId: req.params.id } , update)

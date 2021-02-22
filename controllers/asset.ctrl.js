@@ -78,49 +78,49 @@ exports.assetDBController = {
         console.log(req)
         const {body} = req
         const update = {}
-        if (body.City != "") {
+        if (body.City != ""  && body.City != null) {
             update.City = body.City
         }
-        if (body.Street != "") {
+        if (body.Street != "" && body.Street != null) {
             update.Street = body.Street
         }
-        if (body.Zip != "") {
+        if (body.Zip != "" && body.Zip != null) {
             update.Zip = body.Zip
         }
-        if (body.Country != "") {
+        if (body.Country != "" && body.Country != null) {
             update.Country = body.Country
         }
-        if (body.Neighborhood != "") {
+        if (body.Neighborhood != "" && body.Neighborhood != null) {
             update.Neighborhood = body.Neighborhood
         }
-        if (body.Rooms != "") {
+        if (body.Rooms != "" && body.Rooms != null) {
             update.Rooms = body.Rooms
         }
-        if (body.SquareFeet != "") {
+        if (body.SquareFeet != "" && body.SquareFeet != null) {
             update.SquareFeet = body.SquareFeet
         }
-        if (body.Floors != "") {
+        if (body.Floors != "" && body.Floors != null) {
             update.Floors = body.Floors
         }
-        if (body.Condition != "") {
+        if (body.Condition != "" && body.Condition != null) {
             update.Condition = body.Condition
         }
-        if (body.Price != "") {
+        if (body.Price != "" && body.Price != null) {
             update.Price = body.Price
         }
-        if (body.Avilability != "") {
+        if (body.Avilability != "" && body.Avilability != null) {
             update.Avilability = body.Avilability
         }
-        if (body.Description != "") {
+        if (body.Description != "" && body.Description != null) {
             update.Description = body.Description
         }
-        if (body.UrlPicture != "") {
+        if (body.UrlPicture != "" && body.UrlPicture != null) {
             update.UrlPicture = body.UrlPicture
         }
-        if(body.OwnerId != "") {
+        if(body.OwnerId != "" && body.OwnerId != null) {
             update.OwnerId = body.OwnerId
         }
-        if(body.RenterId != "") {
+        if(body.RenterId != "" && body.RenterId != null) {
             update.RenterId = body.RenterId
         }
         Asset.updateOne({ id: parseInt(req.params.id) },update)
