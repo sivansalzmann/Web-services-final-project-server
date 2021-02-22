@@ -19,6 +19,7 @@ exports.userDBController = {
     
     },
     getUser(req, res) {
+        console.log("here")
         User.findOne({googleID: req.params.id})
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
