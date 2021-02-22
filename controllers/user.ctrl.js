@@ -11,7 +11,6 @@ const { rawListeners } = require('../Models/user');
 //   }
 
 exports.userDBController = {
-    // getUserToGoogle,
     getUsers(req, res) {
         User.find({})
             .then(docs => { res.json(docs) })
@@ -19,8 +18,7 @@ exports.userDBController = {
     
     },
     getUser(req, res) {
-        console.log("here")
-        User.findOne({googleID: req.params.id})
+        User.findOne({id: req.params.id})
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
