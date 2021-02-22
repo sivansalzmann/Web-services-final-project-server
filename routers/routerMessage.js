@@ -8,4 +8,5 @@ messageRouter.get('/:id', messageDBController.getMessage);
 messageRouter.post('/', messageDBController.addMessage);
 messageRouter.put('/:id', messageDBController.updateMessage);
 messageRouter.delete('/:id', messageDBController.deleteMessage);
+
 module.exports = {messageRouter};

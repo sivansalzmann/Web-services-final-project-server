@@ -8,7 +8,6 @@ getLogout = (req, res) => {
     res.clearCookie('connect.sid');
     res.send("logout");
 };
-
 verify = async (token) => {
     const ticket = await client.verifyIdToken({
         idToken: token,
@@ -16,7 +15,6 @@ verify = async (token) => {
     }).catch(err => console.log(err))
     return ticket.getPayload();
 }
-
 createAuthLogin = async (req, res, next) => {
     let token = req.body.token
     let payload = await verify(token)
@@ -40,9 +38,8 @@ createAuthLogin = async (req, res, next) => {
         })
         .catch(err => {
             console.log(err)
-        })
+    })
 }
-
 module.exports = {
     getLogout,
     createAuthLogin,

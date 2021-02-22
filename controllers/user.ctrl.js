@@ -2,7 +2,6 @@ const { response } = require('express');
 const User = require('../Models/user');
 const passport = require("passport");
 const bcrypt = require("bcryptjs");
-const { rawListeners } = require('../Models/user');
 
 exports.userDBController = {
     getUsers(req, res) {
@@ -82,7 +81,6 @@ exports.userDBController = {
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
     userLogin(req, res, next) {
-        console.log("In userLogin");
         passport.authenticate('local', (err, user, info) => {
             console.log("After passport.authenticate");
             if (err) next(new Error('AuthenticationError'), req, res);
@@ -93,17 +91,14 @@ exports.userDBController = {
               req.logIn(user, (err) => {
                 if (err) console.log("ERROR!" , err);
                 res.send("Successfully Authenticated");
-                console.log(req.user);
               });
             }
           })(req, res, next);
     },
-    
     userLogout(req, res) {
         req.logout();
         res.send({msg: "User logged-out"});
     },
-
     userRegister(req, res) {
         User.findOne({ username: req.body.username }, async (err, doc) => {
             if (err) throw err;

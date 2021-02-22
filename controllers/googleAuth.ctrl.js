@@ -25,9 +25,7 @@ googleAuth = async (req, res, next) => {
             if (docs) {
                 // res.cookie('user', docs)
                 res.json(docs)
-                console.log('the user exist')
             } else {
-                console.log('the user does NOT exist')
                 let user = {
                     id: payload['sub'],
                     FirstName: payload['given_name'],
@@ -40,9 +38,8 @@ googleAuth = async (req, res, next) => {
         })
         .catch(err => {
             console.log(err)
-        })
+    })
 }
-
 module.exports = {
     googleAuth,
     getLogout

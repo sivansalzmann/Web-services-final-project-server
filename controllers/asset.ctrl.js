@@ -35,14 +35,12 @@ exports.assetDBController = {
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
-
     getAsset(req, res) {
         Asset.findOne({ id: parseInt(req.params.id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
     },
-
     async addAsset(req, res) {
         const temp = await Asset.findOne({}).sort({ id: -1 }).limit(1);
         let id = temp.id;
@@ -71,9 +69,7 @@ exports.assetDBController = {
         newAsset.save()
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
-
     },
-
     updateAsset(req, res) {
         const {body} = req
         const update = {}
@@ -128,13 +124,11 @@ exports.assetDBController = {
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
-
     deleteAsset(req, res) {
         Asset.findOneAndDelete({ id: parseInt(req.params.id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
-
 };
 
 

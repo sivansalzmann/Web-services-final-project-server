@@ -14,14 +14,12 @@ exports.messageDBController = {
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     
     },
-
     getMessage(req, res) {
         Message.findOne({id: parseInt(req.params.id)})
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
     },
-
     async addMessage(req, res) {
         const temp = await Message.findOne({}).sort({ id: -1 }).limit(1);
         let id = temp.id;
@@ -38,21 +36,17 @@ exports.messageDBController = {
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
     },
-
     updateMessage(req, res) {
         Message.updateOne({ id: parseInt(req.params.id) }, req.body)
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
     },
-
     deleteMessage(req, res) {
         Message.findOneAndDelete({ id: parseInt(req.params.id) })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },
-
-
 };
 
 
