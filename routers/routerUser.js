@@ -4,8 +4,8 @@ const {userDBController} = require('../controllers/user.ctrl');
 const userRouter = new Router();  
 
 userRouter.get('/', userDBController.getUsers);
-userRouter.get('/:id', userDBController.getUser);
+userRouter.get('/:googleId', userDBController.getUser);
 userRouter.post('/', userDBController.addUser);
-userRouter.put('/:id', userDBController.updateUser);
-userRouter.delete('/:id', userDBController.deleteUser);
+userRouter.put('/:googleId', userDBController.updateUser);
+
 module.exports = {userRouter};

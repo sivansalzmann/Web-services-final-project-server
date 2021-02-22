@@ -5,13 +5,12 @@ const { userDBController } = require('./user.ctrl');
 exports.renterDeatilsDBController = {
 
     getRenterDeatils(req, res) {
-        RenterDeatils.findOne({ RenterId: req.params.RenterId })
+        RenterDeatils.findOne({ googleID: req.params.id })
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
     },
     async addRenterDeatils(req, res) {
-        console.log("heree")
         const temp = await RenterDeatils.findOne({}).sort({ id: -1 }).limit(1);
         let id = temp.id;
         const newRenterDeatils = new RenterDeatils({

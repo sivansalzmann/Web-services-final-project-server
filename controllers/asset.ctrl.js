@@ -75,6 +75,7 @@ exports.assetDBController = {
     },
 
     updateAsset(req, res) {
+        console.log(req)
         const {body} = req
         const update = {}
         if (body.City != "") {
@@ -116,7 +117,13 @@ exports.assetDBController = {
         if (body.UrlPicture != "") {
             update.UrlPicture = body.UrlPicture
         }
-            Asset.updateOne({ id: parseInt(req.params.id) },update)
+        if(body.OwnerId != "") {
+            update.OwnerId = body.OwnerId
+        }
+        if(body.RenterId != "") {
+            update.RenterId = body.RenterId
+        }
+        Asset.updateOne({ id: parseInt(req.params.id) },update)
             .then(docs => { res.json(docs) })
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
     },

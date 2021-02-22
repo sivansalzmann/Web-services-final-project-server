@@ -15,6 +15,7 @@ exports.userDBController = {
 
     },
     async addUser(user,req, res) {
+        console.log("here")
         const temp = await User.findOne({}).sort({ id: -1 }).limit(1);
         let id = temp.id;
         const newUser = new User({
@@ -24,10 +25,12 @@ exports.userDBController = {
             "LastName": user.LastName,
             "Email": user.Email,
             "ImageUrl": user.ImageUrl,
-            "Gender": "Male",
-            "Phone": "123456",
-            "Age": 100,
-            "Country": "USA"
+            "Gender": req.body.Gender,
+            "Phone": req.body.Phone,
+            "Age": req.body.Age,
+            "Country": req.body.Country,
+            "IsRenter": false,
+            "IsOwner": false
         });
 
         newUser.save()
@@ -41,9 +44,6 @@ exports.userDBController = {
         if (body.Country != "") {
             update.Country = body.Country
         }
-        // if (body.Email != "") {
-        //     update.Email = user.Email
-        // }
         if (body.Phone != "") {
             update.Phone = body.Phone
         }
@@ -53,16 +53,17 @@ exports.userDBController = {
         if (body.Gender != "") {
             update.Gender = body.Gender
         }
-        User.updateOne({ id: parseInt(req.params.id) } , update)
-            .then(() => res.json(body))
+        if (body.IsRenter != "") {
+            update.IsRenter = body.IsRenter
+        }
+        if (body.IsOwner != "") {
+            update.IsOwner = body.IsOwner
+        }
+        User.updateOne({ googleId: req.params.id } , update)
+            .then(() => res.json(update))
             .catch(err => console.log(`Error getting the data from DB: ${err}`));
 
-    },
-    deleteUser(req, res) {
-        User.findOneAndDelete({googleID: req.params.id})
-            .then(() => res.json({googleID: `${req.params.id}`}))
-            .catch(err => console.log(`Error getting the data from DB: ${err}`));
-    },
+    }
 };
 
 

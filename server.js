@@ -15,13 +15,11 @@ const {renterDeatilsRouter} = require("./routers/routerRenterDeatils");
 const {googleRouter} = require("./routers/routergoogleAPI");
 const { googleAuthRouther } = require('./routers/routerGoogleAuth');
 
-
 app.use(cors({ origin: true, credentials: true }))
 app.use(express.json());
 app.use(express.urlencoded({extended: true})); 
 app.use(cookieParser());
 app.use(morgan('tiny', { stream: logStream }))
-
 
 // app.use((req, res, next) => {
 //     res.header('Access-Control-Allow-Origin', '*');
@@ -38,13 +36,8 @@ app.use('/api/messages', messageRouter);
 app.use('/api/renterDeatils', renterDeatilsRouter);
 app.use('/api/assetsAPI', googleRouter);
 
-
-
 app.use((req, res, next) => {
     res.status(500).send('Something is broken!');
 });
-
-
-
 
 app.listen(port, () => console.log('Express server is running on port ', port));
