@@ -11,6 +11,9 @@ const userSchema = new Schema({
     Age: {type: String},
     Country: {type: String},
     Phone: {type: String},
+    JobTitle: {type: String},
+    Budget: {type: String},
+    FavoriteCountry: {type: String},
     IsRenter: {type:Boolean},
     IsOwner: {type:Boolean},
 },{collection: 'users'});

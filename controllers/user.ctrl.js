@@ -4,12 +4,6 @@ const passport = require("passport");
 const bcrypt = require("bcryptjs");
 const { rawListeners } = require('../Models/user');
 
-// Getting user by username and email from google api and checking if it is in the DB.
-// async function getUserToGoogle(name, email) {
-//     let user = await User.findOne({ username:name ,email: email})
-//     return user;
-//   }
-
 exports.userDBController = {
     getUsers(req, res) {
         User.find({})
@@ -36,7 +30,9 @@ exports.userDBController = {
             "Gender": null,
             "Phone": null,
             "Age": null,
-            "Country": null,
+            "Budget": null,
+            "FavoriteCountry": null,
+            "JobTitle": null,
             "IsRenter": false,
             "IsOwner": false
         });
@@ -65,6 +61,15 @@ exports.userDBController = {
         }
         if (body.IsOwner != "" && body.IsOwner != null) {
             update.IsOwner = body.IsOwner
+        }
+        if (body.Budget != "" && body.Budget != null) {
+            update.Budget = body.Budget
+        }
+        if (body.FavoriteCountry != "" && body.FavoriteCountry != null) {
+            update.FavoriteCountry = body.FavoriteCountry
+        }
+        if (body.JobTitle != "" && body.JobTitle != null) {
+            update.JobTitle = body.JobTitle
         }
         User.updateOne({ id: parseInt(req.params.id) },update)
             .then(docs => { res.json(docs) })
