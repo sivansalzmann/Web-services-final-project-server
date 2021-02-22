@@ -15,6 +15,7 @@ const {renterDeatilsRouter} = require("./routers/routerRenterDeatils");
 const {googleRouter} = require("./routers/routergoogleAPI");
 const { googleAuthRouther } = require('./routers/routerGoogleAuth');
 
+
 app.use(cors({ origin: true, credentials: true }))
 app.use(express.json());
 app.use(express.urlencoded({extended: true})); 
@@ -28,6 +29,7 @@ app.use(morgan('tiny', { stream: logStream }))
 //     res.set('Content-Type', 'application/json');
 //     next();
 // });
+
 
 app.use('/api/auth', googleAuthRouther)
 app.use('/api/assets', assetRouter);
