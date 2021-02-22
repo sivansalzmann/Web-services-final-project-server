@@ -33,10 +33,10 @@ exports.userDBController = {
             "LastName": user.LastName,
             "Email": user.Email,
             "ImageUrl": user.ImageUrl,
-            "Gender": req.body.Gender,
-            "Phone": req.body.Phone,
-            "Age": req.body.Age,
-            "Country": req.body.Country,
+            "Gender": null,
+            "Phone": null,
+            "Age": null,
+            "Country": null,
             "IsRenter": false,
             "IsOwner": false
         });
