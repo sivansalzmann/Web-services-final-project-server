@@ -75,7 +75,6 @@ exports.assetDBController = {
     },
 
     updateAsset(req, res) {
-        console.log(req)
         const {body} = req
         const update = {}
         if (body.City != ""  && body.City != null) {
@@ -112,16 +111,18 @@ exports.assetDBController = {
             update.Avilability = body.Avilability
         }
         if (body.Description != "" && body.Description != null) {
+            console.log(body.RenterId)
             update.Description = body.Description
         }
         if (body.UrlPicture != "" && body.UrlPicture != null) {
             update.UrlPicture = body.UrlPicture
         }
+        if(body.RenterId  != "" && body.RenterId != null) {
+            console.log(body.RenterId)
+            update.RenterId = body.RenterId
+        }
         if(body.OwnerId != "" && body.OwnerId != null) {
             update.OwnerId = body.OwnerId
-        }
-        if(body.RenterId != "" && body.RenterId != null) {
-            update.RenterId = body.RenterId
         }
         Asset.updateOne({ id: parseInt(req.params.id) },update)
             .then(docs => { res.json(docs) })

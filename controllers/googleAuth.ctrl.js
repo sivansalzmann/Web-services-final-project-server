@@ -5,7 +5,6 @@ const client = new OAuth2Client(process.env.CLIENT_ID);
 const {userDBController} = require('../controllers/user.ctrl');
 
 getLogout = (req, res) => {
-    console.log("here in log out")
     res.clearCookie('user')
     res.clearCookie('connect.sid');
     res.send("logout");
