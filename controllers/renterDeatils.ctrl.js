@@ -30,13 +30,13 @@ exports.renterDeatilsDBController = {
     updateRenterDeatils(req, res) {
         const {body} = req
         const update = {}
-        if (body.JobTitle != "") {
+        if (body.JobTitle != "" && body.JobTitle != null) {
             update.JobTitle = body.JobTitle
         }
-        if (body.Budget != "") {
+        if (body.Budget != "" && body.Budget != null) {
             update.Budget = body.Budget
         }
-        if (body.FavoriteCountry != "") {
+        if (body.FavoriteCountry != "" && body.FavoriteCountry != null) {
             update.FavoriteCountry = body.FavoriteCountry
         }
         RenterDeatils.updateOne({ id: parseInt(req.params.id) }, update)
