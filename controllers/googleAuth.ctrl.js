@@ -23,7 +23,7 @@ googleAuth = async (req, res, next) => {
     await User.findOne({googleID: payload['sub']})
         .then(docs => {
             if (docs) {
-                res.cookie('user', docs)
+                // res.cookie('user', docs)
                 res.json(docs)
                 console.log('the user exist')
             } else {
