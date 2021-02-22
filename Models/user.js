@@ -1,8 +1,13 @@
 const { Schema, model } = require('mongoose');
 
 const userSchema = new Schema({
+<<<<<<< Updated upstream
     id: {type:Number,required: true},
     googleID: {type:Number,required: true},
+=======
+    id: { type: Number},
+    googleID: {type: String, require:true},
+>>>>>>> Stashed changes
     FirstName: {type: String, required: true },
     LastName: {type: String, required: true },
     Gender: {type: String},
