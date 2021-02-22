@@ -21,10 +21,7 @@
   "dependencies": {
     "await": "^0.2.6",
     "axios": "^0.21.1",
-<<<<<<< Updated upstream
-=======
     "bcryptjs": "^2.4.3",
->>>>>>> Stashed changes
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
