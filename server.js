@@ -20,6 +20,15 @@ app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(morgan('tiny', { stream: logStream }))
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Methods', 'POST, PUT, GET, DELETE, OPTIONS')
+    res.set('Content-Type', 'application/json');
+    next();
+});
+
+
 app.use('/api/auth', googleAuthRouther)
 app.use('/api/assets', assetRouter);
 app.use('/api/users',userRouter);
