@@ -11,7 +11,6 @@ const logStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), { flags:
 const {assetRouter} = require("./routers/routerAsset");
 const {userRouter} = require("./routers/routerUser");
 const {messageRouter} = require("./routers/routerMessage");
-const {googleRouter} = require("./routers/routergoogleAPI");
 const { googleAuthRouther } = require('./routers/routerGoogleAuth');
 
 app.use(cors({ origin: true, credentials: true }))
@@ -24,7 +23,6 @@ app.use('/api/auth', googleAuthRouther)
 app.use('/api/assets', assetRouter);
 app.use('/api/users',userRouter);
 app.use('/api/messages', messageRouter);
-app.use('/api/assetsAPI', googleRouter);
 
 app.use((req, res, next) => {
     res.status(500).send('Something is broken!');
